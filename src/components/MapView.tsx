@@ -3,24 +3,28 @@ import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { Sucursal } from "@/data/sucursales";
+import markerLogo from "@/assets/logo.svg";
 
 // Custom SVG marker icon
-function createMarkerIcon(isActive: boolean) {
-  const color = isActive ? "#C5A55A" : "#722F37";
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="44" viewBox="0 0 32 44">
-    <path d="M16 0C7.163 0 0 7.163 0 16c0 12 16 28 16 28s16-16 16-28C32 7.163 24.837 0 16 0z" fill="${color}" stroke="#fff" stroke-width="1.5"/>
-    <circle cx="16" cy="15" r="7" fill="#fff" opacity="0.9"/>
-    <circle cx="16" cy="15" r="4" fill="${color}"/>
-  </svg>`;
+function createMarkerIcon(isActive) {
+  const html = `
+  <img
+    src="${markerLogo}"
+    class="marker-logo"
+    style="width: 32px; height: 44px;"
+  />
+`;
+
 
   return L.divIcon({
-    html: svg,
+    html,
     className: "custom-marker",
     iconSize: [32, 44],
     iconAnchor: [16, 44],
     popupAnchor: [0, -44],
   });
 }
+
 
 // Component to fly to a location
 function FlyTo({ center, zoom }: { center: [number, number] | null; zoom: number }) {
