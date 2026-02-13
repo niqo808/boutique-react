@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/landing/Footer";
-import { Award, Snowflake, Truck, Weight, Flame, Clock, Star, StarHalf, MessageCircle } from "lucide-react";
+import { Award, Snowflake, Truck, Flame, Clock, MessageCircle } from "lucide-react";
 import bifeChorizoImg from "@/assets/bife_chorizo.jpg";
 import carne2Img from "@/assets/carne2.jpg";
 import carne3Img from "@/assets/carne3.jpg";
@@ -18,22 +18,20 @@ interface Product {
   category: Category;
   premium?: boolean;
   image: string;
-  rating: number;
   description: string;
-  weight: string;
   cooking: string;
   time: string;
 }
 
 const products: Product[] = [
-  { name: "Bife de Chorizo", category: "vacuna", premium: true, image: bifeChorizoImg, rating: 5, description: "Corte estrella argentino con marmoleado excepcional. Jugoso, tierno y con sabor intenso.", weight: "400-500g", cooking: "Parrilla", time: "15-20min" },
-  { name: "Lomo", category: "vacuna", premium: true, image: carne2Img, rating: 5, description: "El corte más tierno y magro. Ideal para ocasiones especiales y preparaciones gourmet.", weight: "300-400g", cooking: "Plancha", time: "10-15min" },
-  { name: "Bife Ancho", category: "vacuna", premium: true, image: carne3Img, rating: 4.5, description: "Corte generoso con hueso. Sabor intenso y textura perfecta para parrilla.", weight: "500-600g", cooking: "Parrilla", time: "15-20min" },
-  { name: "Bife Angosto", category: "vacuna", image: carne4Img, rating: 4.5, description: "Corte magro y sabroso. Ideal para quienes buscan menos grasa sin sacrificar sabor.", weight: "300-400g", cooking: "Parrilla/Plancha", time: "12-18min" },
-  { name: "Asado de Tira", category: "vacuna", image: carne6Img, rating: 4, description: "Clásico argentino para parrilladas. Jugoso y con hueso que aporta sabor único.", weight: "Por kg", cooking: "Parrilla", time: "20-25min" },
-  { name: "Vacío", category: "vacuna", image: carne7Img, rating: 5, description: "Corte versátil y jugoso. Perfecto para parrilla o al horno con su capa de grasa característica.", weight: "Por kg", cooking: "Parrilla/Horno", time: "25-30min" },
-  { name: "Bondiola de Cerdo", category: "cerdo", image: carneImg, rating: 4.5, description: "Corte tierno y jugoso del cerdo, ideal para horno lento o parrilla.", weight: "1-1.5kg", cooking: "Horno/Parrilla", time: "60-90min" },
-  { name: "Pechuga de Pollo", category: "pollo", image: carne2Img, rating: 4, description: "Pechuga fresca y magra de pollo de campo, perfecta para plancha o al horno.", weight: "300-400g", cooking: "Plancha/Horno", time: "15-20min" },
+  { name: "Bife de Chorizo", category: "vacuna", premium: true, image: bifeChorizoImg, description: "Corte estrella argentino con marmoleado excepcional. Jugoso, tierno y con sabor intenso.", cooking: "Parrilla", time: "15-20min" },
+  { name: "Lomo", category: "vacuna", premium: true, image: carne2Img, description: "El corte más tierno y magro. Ideal para ocasiones especiales y preparaciones gourmet.", cooking: "Plancha", time: "10-15min" },
+  { name: "Bife Ancho", category: "vacuna", premium: true, image: carne3Img, description: "Corte generoso con hueso. Sabor intenso y textura perfecta para parrilla.", cooking: "Parrilla", time: "15-20min" },
+  { name: "Bife Angosto", category: "vacuna", image: carne4Img, description: "Corte magro y sabroso. Ideal para quienes buscan menos grasa sin sacrificar sabor.", cooking: "Parrilla/Plancha", time: "12-18min" },
+  { name: "Asado de Tira", category: "vacuna", image: carne6Img, description: "Clásico argentino para parrilladas. Jugoso y con hueso que aporta sabor único.", cooking: "Parrilla", time: "20-25min" },
+  { name: "Vacío", category: "vacuna", image: carne7Img, description: "Corte versátil y jugoso. Perfecto para parrilla o al horno con su capa de grasa característica.", cooking: "Parrilla/Horno", time: "25-30min" },
+  { name: "Bondiola de Cerdo", category: "cerdo", image: carneImg, description: "Corte tierno y jugoso del cerdo, ideal para horno lento o parrilla.", cooking: "Horno/Parrilla", time: "60-90min" },
+  { name: "Pechuga de Pollo", category: "pollo", image: carne2Img, description: "Pechuga fresca y magra de pollo de campo, perfecta para plancha o al horno.", cooking: "Plancha/Horno", time: "15-20min" },
 ];
 
 const categories: { value: Category; label: string }[] = [
@@ -42,16 +40,6 @@ const categories: { value: Category; label: string }[] = [
   { value: "cerdo", label: "Cerdo" },
   { value: "pollo", label: "Pollo" },
 ];
-
-function RatingStars({ rating }: { rating: number }) {
-  const stars = [];
-  for (let i = 1; i <= 5; i++) {
-    if (i <= Math.floor(rating)) stars.push(<Star key={i} className="w-4 h-4 fill-secondary text-secondary" />);
-    else if (i - 0.5 <= rating) stars.push(<StarHalf key={i} className="w-4 h-4 fill-secondary text-secondary" />);
-    else stars.push(<Star key={i} className="w-4 h-4 text-muted-foreground/30" />);
-  }
-  return <div className="flex gap-0.5">{stars}</div>;
-}
 
 export default function Productos() {
   const [filter, setFilter] = useState<Category>("all");
@@ -133,12 +121,8 @@ export default function Productos() {
                   </div>
                   <div className="p-6">
                     <h3 className="font-display text-xl font-bold text-foreground mb-1">{product.name}</h3>
-                    <RatingStars rating={product.rating} />
                     <p className="font-body text-muted-foreground text-sm mt-3">{product.description}</p>
                     <div className="flex flex-wrap gap-3 mt-4">
-                      <span className="flex items-center gap-1 text-xs font-body text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
-                        <Weight className="w-3 h-3" /> {product.weight}
-                      </span>
                       <span className="flex items-center gap-1 text-xs font-body text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
                         <Flame className="w-3 h-3" /> {product.cooking}
                       </span>
