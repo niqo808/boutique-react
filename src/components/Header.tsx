@@ -5,6 +5,7 @@ import logoImg from "@/assets/logo.png";
 
 const navItems = [
   { label: "Inicio", href: "/" },
+  { label: "Nosotros", href: "/nosotros" },
   { label: "Productos", href: "/productos" },
   { label: "Sucursales", href: "/sucursales" },
   { label: "Contacto", href: "/contacto" },
