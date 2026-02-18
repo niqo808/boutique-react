@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/landing/Footer";
+import PageTransition from "@/components/PageTransition";
+import AnimatedSection from "@/components/AnimatedSection";
+import { staggerChild } from "@/components/StaggerGrid";
 import { Award, Snowflake, Truck, Flame, Clock, MessageCircle } from "lucide-react";
 import bifeChorizoImg from "@/assets/bife_chorizo.jpg";
 import carne2Img from "@/assets/carne2.jpg";
@@ -43,18 +47,17 @@ const categories: { value: Category; label: string }[] = [
 
 export default function Productos() {
   const [filter, setFilter] = useState<Category>("all");
-
   const filtered = filter === "all" ? products : products.filter((p) => p.category === filter);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <PageTransition className="flex flex-col min-h-screen">
       <Header />
       <main>
         {/* HERO */}
         <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
           <img src={carne4Img} alt="Productos" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
-          <div className="relative z-10 text-center px-6">
+          <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
               Nuestros Cortes Premium
             </h1>
@@ -67,13 +70,19 @@ export default function Productos() {
                 { icon: <Snowflake className="w-5 h-5" />, label: "Maduración Controlada" },
                 { icon: <Truck className="w-5 h-5" />, label: "Entrega en 24hs" },
               ].map((b) => (
-                <div key={b.label} className="glass-dark rounded-full px-4 py-2 flex items-center gap-2 text-primary-foreground font-body text-sm">
+                <motion.div
+                  key={b.label}
+                  className="glass-dark rounded-full px-4 py-2 flex items-center gap-2 text-primary-foreground font-body text-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
                   {b.icon}
                   <span>{b.label}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </AnimatedSection>
         </section>
 
         {/* FILTERS */}
@@ -82,7 +91,7 @@ export default function Productos() {
             <h3 className="font-display text-lg font-bold text-foreground mb-4 text-center">Tipos de Carne</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {categories.map((c) => (
-                <button
+                <motion.button
                   key={c.value}
                   onClick={() => setFilter(c.value)}
                   className={`font-body text-sm px-6 py-2.5 rounded-full transition-all duration-300 font-semibold ${
@@ -90,9 +99,12 @@ export default function Productos() {
                       ? "bg-primary text-primary-foreground shadow-lg"
                       : "bg-card text-foreground border border-border hover:border-primary hover:text-primary"
                   }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  layout
                 >
                   {c.label}
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
@@ -101,69 +113,81 @@ export default function Productos() {
         {/* PRODUCTS GRID */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-6 max-w-6xl">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filtered.map((product) => (
-                <div
-                  key={product.name}
-                  className="group rounded-xl overflow-hidden bg-card shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative"
-                >
-                  {product.premium && (
-                    <div className="absolute top-4 left-4 z-10 bg-secondary text-secondary-foreground font-body text-xs font-bold px-3 py-1 rounded-full">
-                      Premium
+            <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" layout>
+              <AnimatePresence mode="popLayout">
+                {filtered.map((product) => (
+                  <motion.div
+                    key={product.name}
+                    variants={staggerChild}
+                    initial="hidden"
+                    animate="visible"
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    layout
+                    whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(114, 47, 55, 0.12)" }}
+                    className="group rounded-xl overflow-hidden bg-card shadow-lg relative"
+                  >
+                    {product.premium && (
+                      <div className="absolute top-4 left-4 z-10 bg-secondary text-secondary-foreground font-body text-xs font-bold px-3 py-1 rounded-full">
+                        Premium
+                      </div>
+                    )}
+                    <div className="h-56 overflow-hidden relative">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
-                  )}
-                  <div className="h-56 overflow-hidden relative">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-foreground mb-1">{product.name}</h3>
-                    <p className="font-body text-muted-foreground text-sm mt-3">{product.description}</p>
-                    <div className="flex flex-wrap gap-3 mt-4">
-                      <span className="flex items-center gap-1 text-xs font-body text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
-                        <Flame className="w-3 h-3" /> {product.cooking}
-                      </span>
-                      <span className="flex items-center gap-1 text-xs font-body text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
-                        <Clock className="w-3 h-3" /> {product.time}
-                      </span>
+                    <div className="p-6">
+                      <h3 className="font-display text-xl font-bold text-foreground mb-1">{product.name}</h3>
+                      <p className="font-body text-muted-foreground text-sm mt-3">{product.description}</p>
+                      <div className="flex flex-wrap gap-3 mt-4">
+                        <span className="flex items-center gap-1 text-xs font-body text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
+                          <Flame className="w-3 h-3" /> {product.cooking}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs font-body text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
+                          <Clock className="w-3 h-3" /> {product.time}
+                        </span>
+                      </div>
+                      <div className="flex gap-3 mt-5">
+                        <Link
+                          to="/contacto"
+                          className="flex-1 text-center bg-primary text-primary-foreground font-body text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                        >
+                          <MessageCircle className="w-4 h-4" /> Consultar
+                        </Link>
+                      </div>
                     </div>
-                    <div className="flex gap-3 mt-5">
-                      <Link
-                        to="/contacto"
-                        className="flex-1 text-center bg-primary text-primary-foreground font-body text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
-                      >
-                        <MessageCircle className="w-4 h-4" /> Consultar
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
           </div>
         </section>
 
         {/* CTA */}
         <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-6 max-w-3xl text-center">
+          <AnimatedSection variant="fadeUp" className="container mx-auto px-6 max-w-3xl text-center">
             <h2 className="font-display text-3xl font-bold text-foreground mb-4">¿No encontrás lo que buscás?</h2>
             <p className="font-body text-muted-foreground mb-8">
               Tenemos muchos más cortes disponibles en nuestras sucursales. Contactanos y te asesoramos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contacto" className="inline-block bg-primary text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                Contactanos
+              <Link to="/contacto">
+                <motion.span className="inline-block bg-primary text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  Contactanos
+                </motion.span>
               </Link>
-              <Link to="/sucursales" className="inline-block border-2 border-primary text-primary font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all">
-                Ver Sucursales
+              <Link to="/sucursales">
+                <motion.span className="inline-block border-2 border-primary text-primary font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  Ver Sucursales
+                </motion.span>
               </Link>
             </div>
-          </div>
+          </AnimatedSection>
         </section>
       </main>
       <Footer />
-    </div>
+    </PageTransition>
   );
 }

@@ -5,10 +5,11 @@ import ProductsSection from "@/components/landing/ProductsSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
+import PageTransition from "@/components/PageTransition";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <PageTransition className="flex flex-col min-h-screen">
       <Header />
       <main>
         <HeroSection />
@@ -18,6 +19,6 @@ export default function LandingPage() {
         <CTASection />
       </main>
       <Footer />
-    </div>
+    </PageTransition>
   );
 }
