@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/landing/Footer";
+import PageTransition from "@/components/PageTransition";
+import AnimatedSection from "@/components/AnimatedSection";
+import StaggerGrid, { staggerChild } from "@/components/StaggerGrid";
 import { Store, CalendarDays, Handshake, Truck, Gem, Snowflake, Users, Star, Target, Heart } from "lucide-react";
 import carne4Img from "@/assets/carne4.jpg";
 import carne6Img from "@/assets/carne6.jpg";
@@ -47,30 +51,32 @@ const gallery = [
 
 export default function SobreNosotros() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <PageTransition className="flex flex-col min-h-screen">
       <Header />
       <main>
         {/* HERO */}
         <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
           <img src={carne4Img} alt="Sobre nosotros" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
-          <div className="relative z-10 text-center px-6">
+          <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
               Descubrí Nuestra Historia
             </h1>
             <p className="font-body text-lg md:text-xl text-primary-foreground/80">
               Más de 25 años de pasión por la excelencia
             </p>
-          </div>
+          </AnimatedSection>
         </section>
 
         {/* INTRO */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 max-w-4xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-8">
-              Una Tradición de Excelencia
-            </h2>
-            <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
+            <AnimatedSection variant="fadeUp">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-8">
+                Una Tradición de Excelencia
+              </h2>
+            </AnimatedSection>
+            <AnimatedSection variant="fadeUp" delay={0.15} className="space-y-5 font-body text-muted-foreground leading-relaxed">
               <p>
                 Con sucursales en <strong className="text-foreground">Villa Rosa, Villa de Mayo y Adolfo Sourdeaux</strong>, contamos con más de <strong className="text-foreground">25 años de experiencia</strong> en el rubro, consolidados como <strong className="text-foreground">referentes de calidad y excelencia</strong> en el mercado.
               </p>
@@ -87,34 +93,41 @@ export default function SobreNosotros() {
               <p className="text-center text-xl text-secondary font-bold tracking-wider pt-2">
                 La Paz, ¡buena carne, buenos momentos!
               </p>
-            </div>
+            </AnimatedSection>
           </div>
         </section>
 
         {/* TIMELINE */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-6 max-w-5xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestro Recorrido</h2>
-            <p className="font-body text-muted-foreground text-center mb-14">Tres décadas de crecimiento y excelencia</p>
+            <AnimatedSection variant="fadeUp">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestro Recorrido</h2>
+              <p className="font-body text-muted-foreground text-center mb-14">Tres décadas de crecimiento y excelencia</p>
+            </AnimatedSection>
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border hidden md:block" />
               <div className="space-y-12">
                 {timeline.map((item, i) => (
-                  <div key={item.year} className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-                    <div className="flex-1">
-                      <div className="glass rounded-xl p-6">
-                        <span className="font-display text-2xl font-bold text-primary">{item.year}</span>
-                        <h3 className="font-display text-lg font-bold text-foreground mt-2">{item.title}</h3>
-                        <p className="font-body text-muted-foreground text-sm mt-2">{item.desc}</p>
-                        <div className="mt-4 rounded-lg overflow-hidden h-40">
-                          <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  <AnimatedSection
+                    key={item.year}
+                    variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}
+                    delay={i * 0.1}
+                  >
+                    <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+                      <div className="flex-1">
+                        <div className="glass rounded-xl p-6">
+                          <span className="font-display text-2xl font-bold text-primary">{item.year}</span>
+                          <h3 className="font-display text-lg font-bold text-foreground mt-2">{item.title}</h3>
+                          <p className="font-body text-muted-foreground text-sm mt-2">{item.desc}</p>
+                          <div className="mt-4 rounded-lg overflow-hidden h-40">
+                            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                          </div>
                         </div>
                       </div>
+                      <div className="hidden md:flex w-4 h-4 rounded-full bg-primary border-4 border-background shrink-0 z-10" />
+                      <div className="flex-1 hidden md:block" />
                     </div>
-                    <div className="hidden md:flex w-4 h-4 rounded-full bg-primary border-4 border-background shrink-0 z-10" />
-                    <div className="flex-1 hidden md:block" />
-                  </div>
+                  </AnimatedSection>
                 ))}
               </div>
             </div>
@@ -126,53 +139,67 @@ export default function SobreNosotros() {
           <img src={carne6Img} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/80" />
           <div className="relative z-10 container mx-auto px-6 max-w-5xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-12">La Paz en Números</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <AnimatedSection variant="fadeUp">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-12">La Paz en Números</h2>
+            </AnimatedSection>
+            <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((s) => (
-                <div key={s.label} className="glass-dark rounded-xl p-6 text-center">
+                <motion.div key={s.label} variants={staggerChild} className="glass-dark rounded-xl p-6 text-center">
                   <div className="text-secondary mb-3 flex justify-center">{s.icon}</div>
                   <div className="font-display text-3xl font-bold text-primary-foreground">{s.value}</div>
                   <div className="font-body text-sm text-primary-foreground/70 mt-1">{s.label}</div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerGrid>
           </div>
         </section>
 
         {/* VALUES */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 max-w-6xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestros Pilares</h2>
-            <p className="font-body text-muted-foreground text-center mb-12">Los valores que nos definen</p>
-            <div className="grid md:grid-cols-3 gap-6">
+            <AnimatedSection variant="fadeUp">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestros Pilares</h2>
+              <p className="font-body text-muted-foreground text-center mb-12">Los valores que nos definen</p>
+            </AnimatedSection>
+            <StaggerGrid className="grid md:grid-cols-3 gap-6">
               {values.map((v) => (
-                <div key={v.title} className="glass rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <motion.div
+                  key={v.title}
+                  variants={staggerChild}
+                  whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(114, 47, 55, 0.12)" }}
+                  transition={{ duration: 0.3 }}
+                  className="glass rounded-xl p-6 transition-all duration-300"
+                >
                   <div className="text-primary mb-4">{v.icon}</div>
                   <h3 className="font-display text-lg font-bold text-foreground mb-2">{v.title}</h3>
                   <p className="font-body text-muted-foreground text-sm">{v.desc}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerGrid>
           </div>
         </section>
 
         {/* PROCESS */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-6 max-w-5xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestro Proceso</h2>
-            <p className="font-body text-muted-foreground text-center mb-14">De la selección a tu mesa</p>
+            <AnimatedSection variant="fadeUp">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestro Proceso</h2>
+              <p className="font-body text-muted-foreground text-center mb-14">De la selección a tu mesa</p>
+            </AnimatedSection>
             <div className="space-y-8">
               {process.map((p, i) => (
-                <div key={p.step} className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-                  <div className="md:w-1/2 rounded-xl overflow-hidden h-64">
-                    <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                <AnimatedSection key={p.step} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"} delay={i * 0.1}>
+                  <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+                    <div className="md:w-1/2 rounded-xl overflow-hidden h-64">
+                      <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="md:w-1/2">
+                      <span className="font-display text-5xl font-bold text-primary/20">{p.step}</span>
+                      <h3 className="font-display text-xl font-bold text-foreground mt-2">{p.title}</h3>
+                      <p className="font-body text-muted-foreground mt-3">{p.desc}</p>
+                    </div>
                   </div>
-                  <div className="md:w-1/2">
-                    <span className="font-display text-5xl font-bold text-primary/20">{p.step}</span>
-                    <h3 className="font-display text-xl font-bold text-foreground mt-2">{p.title}</h3>
-                    <p className="font-body text-muted-foreground mt-3">{p.desc}</p>
-                  </div>
-                </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -181,18 +208,24 @@ export default function SobreNosotros() {
         {/* GALLERY */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 max-w-6xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestra Esencia</h2>
-            <p className="font-body text-muted-foreground text-center mb-12">Imágenes que cuentan nuestra historia</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <AnimatedSection variant="fadeUp">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-2">Nuestra Esencia</h2>
+              <p className="font-body text-muted-foreground text-center mb-12">Imágenes que cuentan nuestra historia</p>
+            </AnimatedSection>
+            <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {gallery.map((g) => (
-                <div key={g.label} className="group relative rounded-xl overflow-hidden h-56 cursor-pointer">
+                <motion.div
+                  key={g.label}
+                  variants={staggerChild}
+                  className="group relative rounded-xl overflow-hidden h-56 cursor-pointer"
+                >
                   <img src={g.image} alt={g.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-all duration-300 flex items-center justify-center">
                     <span className="font-body text-primary-foreground font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">{g.label}</span>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </StaggerGrid>
           </div>
         </section>
 
@@ -200,7 +233,7 @@ export default function SobreNosotros() {
         <section className="relative py-20 overflow-hidden">
           <img src={contactoImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/80" />
-          <div className="relative z-10 text-center px-6">
+          <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
               ¿Querés Experimentar la Diferencia?
             </h2>
@@ -208,17 +241,29 @@ export default function SobreNosotros() {
               Visitá cualquiera de nuestras sucursales y descubrí por qué somos la elección de los conocedores
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/sucursales" className="inline-block bg-primary text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                Ver Sucursales
+              <Link to="/sucursales">
+                <motion.span
+                  className="inline-block bg-primary text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Ver Sucursales
+                </motion.span>
               </Link>
-              <Link to="/contacto" className="inline-block border-2 border-primary-foreground text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary-foreground/10 transition-colors">
-                Contactanos
+              <Link to="/contacto">
+                <motion.span
+                  className="inline-block border-2 border-primary-foreground text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Contactanos
+                </motion.span>
               </Link>
             </div>
-          </div>
+          </AnimatedSection>
         </section>
       </main>
       <Footer />
-    </div>
+    </PageTransition>
   );
 }
