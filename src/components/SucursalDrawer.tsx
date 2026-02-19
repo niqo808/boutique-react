@@ -37,7 +37,7 @@ export default function SucursalDrawer({
         <div className="p-4 border-b border-border/30">
           <h2 className="font-display text-lg font-bold text-foreground">Nuestras Sucursales</h2>
           <p className="text-xs font-body text-muted-foreground mt-1">
-            6 locales en el Gran Buenos Aires
+            6 locales en zona norte del Gran Buenos Aires
           </p>
         </div>
         <div className="flex-1 overflow-y-auto">

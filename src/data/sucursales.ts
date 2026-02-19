@@ -1,3 +1,14 @@
+import centralImg from "@/assets/sucursales/central.jpeg";
+import central2Img from "@/assets/sucursales/central2.jpeg";
+import villarosaImg from "@/assets/sucursales/villarosa.jpeg";
+import villarosa2Img from "@/assets/sucursales/villarosa2.jpeg";
+import sourdeauxImg from "@/assets/sucursales/sourdeaux.jpeg";
+import carne1Img from "@/assets/sucursales/carne1.jpeg";
+import carne2Img from "@/assets/sucursales/carne2.jpeg";
+import carne3Img from "@/assets/sucursales/carne3.jpeg";
+import carne4Img from "@/assets/sucursales/carne4.jpeg";
+import mostradorImg from "@/assets/sucursales/mostrador.jpeg";
+
 export interface Sucursal {
   id: number;
   nombre: string;
@@ -10,9 +21,8 @@ export interface Sucursal {
   servicios: string[];
   imagenes: string[];
   horario: {
-    lunesViernes: { apertura1: string; cierre1: string; apertura2: string; cierre2: string };
-    sabado: { apertura: string; cierre: string };
-    domingo: { apertura: string; cierre: string };
+    lunesSabado: { apertura1: string; cierre1: string; apertura2: string; cierre2: string };
+    domingoFeriados: { apertura: string; cierre: string };
   };
 }
 
@@ -22,16 +32,15 @@ export const sucursales: Sucursal[] = [
     nombre: "Casa Central",
     zona: "Villa Rosa",
     direccion: "Esquina Moreno y Sarmiento",
-    lat: -34.4166,
-    lng: -58.8715,
+    lat: -34.4186,
+    lng: -58.8707,
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Parking", "Wi-Fi"],
-    imagenes: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    imagenes: [centralImg, central2Img, carne1Img],
     horario: {
-      lunesViernes: { apertura1: "08:00", cierre1: "13:00", apertura2: "16:30", cierre2: "21:00" },
-      sabado: { apertura: "08:00", cierre: "21:00" },
-      domingo: { apertura: "08:00", cierre: "13:00" },
+      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
+      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
   {
@@ -39,16 +48,15 @@ export const sucursales: Sucursal[] = [
     nombre: "Sucursal II",
     zona: "Villa de Mayo",
     direccion: "Eva Perón 4505",
-    lat: -34.5000,
-    lng: -58.6833,
+    lat: -34.4974,
+    lng: -58.6756,
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery"],
-    imagenes: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    imagenes: [carne2Img, carne3Img, mostradorImg],
     horario: {
-      lunesViernes: { apertura1: "08:00", cierre1: "13:00", apertura2: "16:30", cierre2: "21:00" },
-      sabado: { apertura: "08:00", cierre: "21:00" },
-      domingo: { apertura: "08:00", cierre: "13:00" },
+      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
+      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
   {
@@ -56,16 +64,15 @@ export const sucursales: Sucursal[] = [
     nombre: "Sucursal III",
     zona: "Villa Rosa",
     direccion: "Esquina Almirante Brown y Descalzi",
-    lat: -34.4180,
-    lng: -58.8730,
+    lat: -34.4130,
+    lng: -58.8650,
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Wi-Fi"],
-    imagenes: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    imagenes: [villarosaImg, villarosa2Img, carne4Img],
     horario: {
-      lunesViernes: { apertura1: "08:00", cierre1: "13:00", apertura2: "16:30", cierre2: "21:00" },
-      sabado: { apertura: "08:00", cierre: "21:00" },
-      domingo: { apertura: "08:00", cierre: "13:00" },
+      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
+      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
   {
@@ -73,16 +80,15 @@ export const sucursales: Sucursal[] = [
     nombre: "Sucursal IV",
     zona: "Adolfo Sourdeaux",
     direccion: "Derqui 1242",
-    lat: -34.5000,
-    lng: -58.6600,
+    lat: -34.5032,
+    lng: -58.6671,
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Parking"],
-    imagenes: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    imagenes: [sourdeauxImg, carne1Img, mostradorImg],
     horario: {
-      lunesViernes: { apertura1: "08:00", cierre1: "13:00", apertura2: "16:30", cierre2: "21:00" },
-      sabado: { apertura: "08:00", cierre: "21:00" },
-      domingo: { apertura: "08:00", cierre: "13:00" },
+      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
+      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
   {
@@ -95,11 +101,10 @@ export const sucursales: Sucursal[] = [
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Wi-Fi"],
-    imagenes: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    imagenes: [carne3Img, carne4Img, carne2Img],
     horario: {
-      lunesViernes: { apertura1: "08:00", cierre1: "13:00", apertura2: "16:30", cierre2: "21:00" },
-      sabado: { apertura: "08:00", cierre: "21:00" },
-      domingo: { apertura: "08:00", cierre: "13:00" },
+      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
+      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
   {
@@ -107,16 +112,15 @@ export const sucursales: Sucursal[] = [
     nombre: "Sucursal VI",
     zona: "Don Torcuato",
     direccion: "Triunvirato 1596, esquina Chile",
-    lat: -34.4887,
-    lng: -58.6266,
+    lat: -34.4870,
+    lng: -58.6141,
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Parking", "Wi-Fi"],
-    imagenes: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    imagenes: [carne1Img, carne2Img, carne4Img],
     horario: {
-      lunesViernes: { apertura1: "08:00", cierre1: "13:00", apertura2: "16:30", cierre2: "21:00" },
-      sabado: { apertura: "08:00", cierre: "21:00" },
-      domingo: { apertura: "08:00", cierre: "13:00" },
+      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
+      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
 ];
@@ -133,19 +137,13 @@ export function estaAbierta(sucursal: Sucursal): boolean {
   };
 
   if (day === 0) {
-    // Domingo
-    const { apertura, cierre } = sucursal.horario.domingo;
+    // Domingo / feriado
+    const { apertura, cierre } = sucursal.horario.domingoFeriados;
     return time >= parse(apertura) && time < parse(cierre);
   }
 
-  if (day === 6) {
-    // Sábado
-    const { apertura, cierre } = sucursal.horario.sabado;
-    return time >= parse(apertura) && time < parse(cierre);
-  }
-
-  // Lunes a Viernes
-  const h = sucursal.horario.lunesViernes;
+  // Lunes a Sábado
+  const h = sucursal.horario.lunesSabado;
   return (
     (time >= parse(h.apertura1) && time < parse(h.cierre1)) ||
     (time >= parse(h.apertura2) && time < parse(h.cierre2))

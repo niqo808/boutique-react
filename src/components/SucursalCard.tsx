@@ -103,9 +103,8 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
             <Clock size={12} className="text-secondary" />
             <span className="font-semibold text-foreground/70">Horarios</span>
           </div>
-          <p>Lun–Vie: 8:00–13:00 / 16:30–21:00</p>
-          <p>Sábado: 8:00–21:00</p>
-          <p>Domingo: 8:00–13:00</p>
+          <p>Lun–Sáb: 8:00–13:00 / 17:00–21:00</p>
+          <p>Dom y Feriados: 8:00–13:00</p>
         </div>
 
         {/* Services */}
