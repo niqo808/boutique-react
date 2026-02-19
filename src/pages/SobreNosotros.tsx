@@ -6,17 +6,21 @@ import PageTransition from "@/components/PageTransition";
 import AnimatedSection from "@/components/AnimatedSection";
 import StaggerGrid, { staggerChild } from "@/components/StaggerGrid";
 import { Store, CalendarDays, Handshake, Truck, Gem, Snowflake, Users, Star, Target, Heart } from "lucide-react";
-import carne4Img from "@/assets/carne4.jpg";
-import carne6Img from "@/assets/carne6.jpg";
-import carne7Img from "@/assets/carne7.jpg";
+import asadoImg from "@/assets/asado.jpeg";
 import contactoImg from "@/assets/contacto.jpg";
+import mostrador from "@/assets/sucursales/mostrador.jpeg";
+import sourdeaux from "@/assets/sucursales/sourdeaux.jpeg";
+import villarosa from "@/assets/sucursales/villarosa.jpeg";
+import villarosa2 from "@/assets/sucursales/villarosa2.jpeg";
+import central from "@/assets/sucursales/central.jpeg";
+import central2 from "@/assets/sucursales/central2.jpeg";
 
 const timeline = [
-  { year: "1994", title: "Los Comienzos", desc: "Apertura de nuestra primera boutique en Villa Rosa. Un sueño familiar se hace realidad.", image: carne4Img },
-  { year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: carne6Img },
-  { year: "2012", title: "Tecnología y Tradición", desc: "Incorporamos cámaras frigoríficas de última generación manteniendo nuestros métodos artesanales.", image: carne7Img },
-  { year: "2018", title: "Cadena de Frío Propia", desc: "Lanzamos nuestro servicio de delivery con flota refrigerada, garantizando calidad hasta tu puerta.", image: contactoImg },
-  { year: "2024", title: "Líder del Mercado", desc: "5 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: carne4Img },
+  { year: "1994", title: "Los Comienzos", desc: "Apertura de nuestra primera boutique en Villa Rosa. Un sueño familiar se hace realidad.", image: central2 },
+  { year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: villarosa2 },
+  { year: "2012", title: "Tecnología y Tradición", desc: "Incorporamos cámaras frigoríficas de última generación manteniendo nuestros métodos artesanales.", image: mostrador },
+  { year: "2018", title: "Cadena de Frío Propia", desc: "Lanzamos nuestro servicio de delivery con flota refrigerada, garantizando calidad hasta tu puerta.", image: sourdeaux },
+  { year: "2024", title: "Líder del Mercado", desc: "5 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: central },
 ];
 
 const stats = [
@@ -36,17 +40,18 @@ const values = [
 ];
 
 const process = [
-  { step: "01", title: "Selección Rigurosa", desc: "Nuestros expertos visitan frigoríficos seleccionados, eligiendo solo animales de primera calidad con certificación de origen.", image: carne4Img },
-  { step: "02", title: "Maduración Controlada", desc: "Cada corte pasa por un proceso de maduración en cámaras especiales con temperatura y humedad precisas.", image: carne6Img },
-  { step: "03", title: "Corte Artesanal", desc: "Maestros carniceros con más de 20 años de experiencia preparan cada pieza con precisión milimétrica.", image: carne7Img },
-  { step: "04", title: "Entrega Refrigerada", desc: "Nuestra flota propia con sistema de frío garantiza que llegue en perfectas condiciones a tu puerta.", image: contactoImg },
+  { step: "01", title: "Selección Rigurosa", desc: "Nuestros expertos visitan frigoríficos seleccionados, eligiendo solo animales de primera calidad con certificación de origen.", image: asadoImg },
+  { step: "02", title: "Maduración Controlada", desc: "Cada corte pasa por un proceso de maduración en cámaras especiales con temperatura y humedad precisas.", image: mostrador },
+  { step: "03", title: "Corte Artesanal", desc: "Maestros carniceros con más de 20 años de experiencia preparan cada pieza con precisión milimétrica.", image: villarosa },
+  { step: "04", title: "Entrega Refrigerada", desc: "Nuestra flota propia con sistema de frío garantiza que llegue en perfectas condiciones a tu puerta.", image: sourdeaux },
 ];
 
 const gallery = [
-  { image: carne4Img, label: "Cortes Premium" },
-  { image: carne6Img, label: "Maestros Carniceros" },
-  { image: carne7Img, label: "Tecnología de Frío" },
-  { image: contactoImg, label: "Nuestras Sucursales" },
+  { image: mostrador, label: "Cortes Premium" },
+  { image: villarosa, label: "Maestros Carniceros" },
+  { image: villarosa2, label: "Tecnología de Frío" },
+  { image: central, label: "Nuestras Sucursales" },
+  { image: central2, label: "Atención Personalizada" },
 ];
 
 export default function SobreNosotros() {
@@ -56,7 +61,7 @@ export default function SobreNosotros() {
       <main>
         {/* HERO */}
         <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-          <img src={carne4Img} alt="Sobre nosotros" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={mostrador} alt="Sobre nosotros" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
           <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
@@ -136,7 +141,7 @@ export default function SobreNosotros() {
 
         {/* STATS */}
         <section className="relative py-20 overflow-hidden">
-          <img src={carne6Img} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={asadoImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/80" />
           <div className="relative z-10 container mx-auto px-6 max-w-5xl">
             <AnimatedSection variant="fadeUp">

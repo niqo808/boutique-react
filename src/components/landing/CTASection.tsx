@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import carneImg from "@/assets/carne.jpg";
+import carneImg from "@/assets/sucursales/carne4.jpeg";
 
 export default function CTASection() {
   const ref = useRef(null);

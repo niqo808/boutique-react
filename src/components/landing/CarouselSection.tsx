@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import contactoImg from "@/assets/contacto.jpg";
-import carne4Img from "@/assets/carne4.jpg";
-import carne6Img from "@/assets/carne6.jpg";
+import sucursales from "@/assets/sucursales/sourdeaux.jpeg";
+import mostrador from "@/assets/sucursales/mostrador.jpeg";
 
 const slides = [
   {
@@ -20,7 +20,7 @@ const slides = [
     text2: "Mantenemos siempre la misma filosofía de calidad suprema en todas nuestras ubicaciones.",
     buttonText: "Ver Sucursales",
     buttonLink: "/sucursales",
-    image: carne4Img,
+    image: sucursales,
   },
   {
     title: "Delivery Refrigerado",
@@ -28,7 +28,7 @@ const slides = [
     text2: "Recibí tus productos frescos y en perfecto estado, siempre.",
     buttonText: "Pedir Ahora",
     buttonLink: "/contacto",
-    image: carne6Img,
+    image: mostrador,
   },
 ];
 

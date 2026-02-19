@@ -30,8 +30,7 @@ import patayMusloImg from "@/assets/PatayMuslo.jpeg";
 import supremasImg from "@/assets/supremas.jpeg";
 
 // Other
-import milanesesImg from "@/assets/Milanesas.jpeg";
-import carne4Img from "@/assets/carne4.jpg";
+import milanesasImg from "@/assets/Milanesas.jpeg";
 import productosImg from "@/assets/sucursales/carne2.jpeg";
 
 type Category = "all" | "vacuna" | "cerdo" | "pollo";
@@ -65,7 +64,7 @@ const products: Product[] = [
   { name: "Pata y Muslo", category: "pollo", image: patayMusloImg, description: "Corte jugoso y sabroso de pollo fresco. Con más sabor que la pechuga, ideal para guisos y cocciones lenta.", cooking: "Horno/Guiso", time: "35-45min" },
 
   // OTHER / OTROS
-  { name: "Milanesas", category: "vacuna", image: milanesesImg, description: "Cortes de vacuno listos para rebozar y freír. Clásicas milanesas napolitanas o simples, siempre deliciosas.", cooking: "Sartén/Horno", time: "8-12min" },
+  { name: "Milanesas", category: "vacuna", image: milanesasImg, description: "Cortes de vacuno listos para rebozar y freír. Clásicas milanesas napolitanas o simples, siempre deliciosas.", cooking: "Sartén/Horno", time: "8-12min" },
 ];
 
 const categories: { value: Category; label: string }[] = [

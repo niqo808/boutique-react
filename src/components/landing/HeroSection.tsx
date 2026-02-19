@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImg from "@/assets/contacto.jpg";
+import heroImg from "@/assets/sucursales/central2.jpeg";
 import { heroTitle, heroSubtitle, heroCTA } from "@/lib/animations";
 
 export default function HeroSection() {
