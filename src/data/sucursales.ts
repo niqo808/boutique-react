@@ -96,7 +96,7 @@ export const sucursales: Sucursal[] = [
     nombre: "Sucursal V",
     zona: "Matheu",
     direccion: "San Martín 262",
-    lat: -34.3818,
+    lat: -34.3829,
     lng: -58.8251,
     telefono: "+54 9 11 6161-4015",
     email: "info@boutiquelapaz.com",
