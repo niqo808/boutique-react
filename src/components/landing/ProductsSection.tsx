@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import bifeImg from "@/assets/bife_chorizo.jpg";
-import carne7Img from "@/assets/carne7.jpg";
-import carne3Img from "@/assets/carne3.jpg";
+import colitaCuadril2Img from "@/assets/colitacuadril2.jpeg";
+import bondiolaImg from "@/assets/bondiola.jpeg";
+import supremasImg from "@/assets/supremas.jpeg";
 import { 
   staggerContainer, 
   staggerItem, 
@@ -12,19 +12,19 @@ import {
 
 const products = [
   {
-    name: "Bife Ancho",
-    description: "Corte jugoso con excelente marmoleado, ideal para parrilla y plancha.",
-    image: bifeImg,
+    name: "Colita de Cuadril",
+    description: "Corte magro y versátil con excelente sabor. Ideal para personas que buscan una carne de calidad sin exceso de grasa.",
+    image: colitaCuadril2Img,
   },
   {
-    name: "Lomo",
-    description: "El corte más tierno y magro, perfecto para ocasiones especiales.",
-    image: carne7Img,
+    name: "Bondiola",
+    description: "Corte clásico del cerdo, tierno y jugoso. Perfecto para horno lento o asados con resultados excepcionales.",
+    image: bondiolaImg,
   },
   {
-    name: "Bife Angosto",
-    description: "Corte sabroso y firme, excelente para parrilla y horno.",
-    image: carne3Img,
+    name: "Supremas",
+    description: "Pechuga de pollo de primera calidad con ala. Versátil y magra, perfecta para plancha, parrilla u horno.",
+    image: supremasImg,
   },
 ];
 

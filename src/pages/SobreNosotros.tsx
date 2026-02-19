@@ -16,11 +16,11 @@ const timeline = [
   { year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: carne6Img },
   { year: "2012", title: "Tecnología y Tradición", desc: "Incorporamos cámaras frigoríficas de última generación manteniendo nuestros métodos artesanales.", image: carne7Img },
   { year: "2018", title: "Cadena de Frío Propia", desc: "Lanzamos nuestro servicio de delivery con flota refrigerada, garantizando calidad hasta tu puerta.", image: contactoImg },
-  { year: "2024", title: "Líder del Mercado", desc: "6 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: carne4Img },
+  { year: "2024", title: "Líder del Mercado", desc: "5 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: carne4Img },
 ];
 
 const stats = [
-  { icon: <Store className="w-8 h-8" />, value: "6", label: "Sucursales" },
+  { icon: <Store className="w-8 h-8" />, value: "5", label: "Sucursales" },
   { icon: <CalendarDays className="w-8 h-8" />, value: "+25", label: "Años de Experiencia" },
   { icon: <Handshake className="w-8 h-8" />, value: "+500", label: "Clientes Corporativos" },
   { icon: <Truck className="w-8 h-8" />, value: "+1000", label: "Entregas Mensuales" },

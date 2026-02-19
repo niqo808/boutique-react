@@ -7,13 +7,32 @@ import PageTransition from "@/components/PageTransition";
 import AnimatedSection from "@/components/AnimatedSection";
 import { staggerChild } from "@/components/StaggerGrid";
 import { Award, Snowflake, Truck, Flame, Clock, MessageCircle } from "lucide-react";
-import bifeChorizoImg from "@/assets/bife_chorizo.jpg";
-import carne2Img from "@/assets/carne2.jpg";
-import carne3Img from "@/assets/carne3.jpg";
+
+// Beef / Vacuna
+import asadoImg from "@/assets/asado.jpeg";
+import colitaCuadrilImg from "@/assets/colitacuadril.jpeg";
+import colitaCuadril2Img from "@/assets/colitacuadril2.jpeg";
+import matambritoImg from "@/assets/matambrito.jpeg";
+import vacioImg from "@/assets/vacio.jpeg";
+import vacio2Img from "@/assets/vacio2.jpeg";
+import vacio3Img from "@/assets/vacio3.jpeg";
+
+// Pork / Cerdo
+import bifeCerdoImg from "@/assets/bifedecerdo.jpeg";
+import bondiolaImg from "@/assets/bondiola.jpeg";
+import pechitoCerdoImg from "@/assets/pechitodecerdo.jpeg";
+import chorizosImg from "@/assets/chorizos.jpeg";
+import morcillaImg from "@/assets/morcilla.jpeg";
+import morcilla2Img from "@/assets/morcilla2.jpeg";
+
+// Chicken / Pollo
+import patayMusloImg from "@/assets/PatayMuslo.jpeg";
+import supremasImg from "@/assets/supremas.jpeg";
+
+// Other
+import milanesesImg from "@/assets/Milanesas.jpeg";
 import carne4Img from "@/assets/carne4.jpg";
-import carne6Img from "@/assets/carne6.jpg";
-import carne7Img from "@/assets/carne7.jpg";
-import carneImg from "@/assets/carne.jpg";
+import productosImg from "@/assets/sucursales/carne2.jpeg";
 
 type Category = "all" | "vacuna" | "cerdo" | "pollo";
 
@@ -28,14 +47,25 @@ interface Product {
 }
 
 const products: Product[] = [
-  { name: "Bife de Chorizo", category: "vacuna", premium: true, image: bifeChorizoImg, description: "Corte estrella argentino con marmoleado excepcional. Jugoso, tierno y con sabor intenso.", cooking: "Parrilla", time: "15-20min" },
-  { name: "Lomo", category: "vacuna", premium: true, image: carne2Img, description: "El corte más tierno y magro. Ideal para ocasiones especiales y preparaciones gourmet.", cooking: "Plancha", time: "10-15min" },
-  { name: "Bife Ancho", category: "vacuna", premium: true, image: carne3Img, description: "Corte generoso con hueso. Sabor intenso y textura perfecta para parrilla.", cooking: "Parrilla", time: "15-20min" },
-  { name: "Bife Angosto", category: "vacuna", image: carne4Img, description: "Corte magro y sabroso. Ideal para quienes buscan menos grasa sin sacrificar sabor.", cooking: "Parrilla/Plancha", time: "12-18min" },
-  { name: "Asado de Tira", category: "vacuna", image: carne6Img, description: "Clásico argentino para parrilladas. Jugoso y con hueso que aporta sabor único.", cooking: "Parrilla", time: "20-25min" },
-  { name: "Vacío", category: "vacuna", image: carne7Img, description: "Corte versátil y jugoso. Perfecto para parrilla o al horno con su capa de grasa característica.", cooking: "Parrilla/Horno", time: "25-30min" },
-  { name: "Bondiola de Cerdo", category: "cerdo", image: carneImg, description: "Corte tierno y jugoso del cerdo, ideal para horno lento o parrilla.", cooking: "Horno/Parrilla", time: "60-90min" },
-  { name: "Pechuga de Pollo", category: "pollo", image: carne2Img, description: "Pechuga fresca y magra de pollo de campo, perfecta para plancha o al horno.", cooking: "Plancha/Horno", time: "15-20min" },
+  // BEEF / VACUNA
+  { name: "Asado de Tira", category: "vacuna", image: asadoImg, description: "Clásico argentino por excelencia. Jugoso, con hueso que aporta sabor único y textura perfecta para parrillas.", cooking: "Parrilla", time: "20-25min" },
+  { name: "Colita de Cuadril", category: "vacuna", image: colitaCuadrilImg, description: "Corte magro y versátil. Ideal para personas que buscan sabor sin demasiada grasa, perfecto para plancha o parrilla.", cooking: "Parrilla/Plancha", time: "15-18min" },
+  { name: "Matambrito", category: "vacuna", image: matambritoImg, description: "Corte tierno y jugoso con sabor característico. Excellent choice para asados y parrilladas tradicionales.", cooking: "Parrilla", time: "18-22min" },
+  { name: "Vacío", category: "vacuna", premium: true, image: vacioImg, description: "Corte versátil y aromático. Con su capa de grasa característica que lo hace perfectamente jugoso en la parrilla.", cooking: "Parrilla/Horno", time: "25-30min" },
+
+  // PORK / CERDO
+  { name: "Bife de Cerdo", category: "cerdo", image: bifeCerdoImg, description: "Bife tierno y sabroso de cerdo fresco. Ideal para plancha, parrilla o preparaciones rápidas con excelente sabor.", cooking: "Plancha/Parrilla", time: "12-15min" },
+  { name: "Bondiola", category: "cerdo", premium: true, image: bondiolaImg, description: "Corte clásico del cerdo, tierno y jugoso. Perfecto para horno lento o asados con resultados excepcionales.", cooking: "Horno/Parrilla", time: "60-90min" },
+  { name: "Pechito de Cerdo", category: "cerdo", image: pechitoCerdoImg, description: "Pieza tierna y sabrosa del cerdo. Ideal para cocciones largas en horno o brasero manteniendo su jugosidad.", cooking: "Horno/Brasero", time: "45-60min" },
+  { name: "Chorizos", category: "cerdo", image: chorizosImg, description: "Embutidos frescos de cerdo bien sazonados. Listos para parrilla o plancha, con auténtico sabor argentino.", cooking: "Parrilla", time: "8-12min" },
+  { name: "Morcilla", category: "cerdo", image: morcillaImg, description: "Embutido tradicional de cerdo y sangre. Parte esencial de una buena parrillada, con sabor profundo y único.", cooking: "Parrilla", time: "5-8min" },
+
+  // CHICKEN / POLLO
+  { name: "Supremas", category: "pollo", image: supremasImg, description: "Pechuga de pollo de primera calidad con ala. Versátil y magra, perfecta para plancha, parrilla u horno.", cooking: "Plancha/Parrilla", time: "12-15min" },
+  { name: "Pata y Muslo", category: "pollo", image: patayMusloImg, description: "Corte jugoso y sabroso de pollo fresco. Con más sabor que la pechuga, ideal para guisos y cocciones lenta.", cooking: "Horno/Guiso", time: "35-45min" },
+
+  // OTHER / OTROS
+  { name: "Milanesas", category: "vacuna", image: milanesesImg, description: "Cortes de vacuno listos para rebozar y freír. Clásicas milanesas napolitanas o simples, siempre deliciosas.", cooking: "Sartén/Horno", time: "8-12min" },
 ];
 
 const categories: { value: Category; label: string }[] = [
@@ -55,7 +85,7 @@ export default function Productos() {
       <main>
         {/* HERO */}
         <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
-          <img src={carne4Img} alt="Productos" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={productosImg} alt="Productos" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
           <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">

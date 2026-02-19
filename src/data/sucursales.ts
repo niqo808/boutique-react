@@ -113,23 +113,6 @@ export const sucursales: Sucursal[] = [
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
     },
   },
-  {
-    id: 6,
-    nombre: "Sucursal VI",
-    zona: "Don Torcuato",
-    direccion: "Triunvirato 1596, esquina Chile",
-    lat: -34.4870,
-    lng: -58.6141,
-    telefono: "+54 9 11 6161-4015",
-    email: "info@boutiquelapaz.com",
-    servicios: ["Venta minorista", "Delivery", "Parking", "Wi-Fi"],
-    imagenes: [carne1Img, carne2Img, carne4Img],
-    googleMapsUrl: "https://maps.app.goo.gl/J11FoqoSusqb3bev5",
-    horario: {
-      lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
-      domingoFeriados: { apertura: "08:00", cierre: "13:00" },
-    },
-  },
 ];
 
 /** Devuelve si la sucursal está abierta ahora */
