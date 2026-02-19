@@ -20,6 +20,7 @@ export interface Sucursal {
   email: string;
   servicios: string[];
   imagenes: string[];
+  googleMapsUrl: string;
   horario: {
     lunesSabado: { apertura1: string; cierre1: string; apertura2: string; cierre2: string };
     domingoFeriados: { apertura: string; cierre: string };
@@ -38,6 +39,7 @@ export const sucursales: Sucursal[] = [
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Parking", "Wi-Fi"],
     imagenes: [centralImg, central2Img, carne1Img],
+    googleMapsUrl: "https://maps.app.goo.gl/DtK2Qi5yrgNhTe4VA",
     horario: {
       lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
@@ -54,6 +56,7 @@ export const sucursales: Sucursal[] = [
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery"],
     imagenes: [carne2Img, carne3Img, mostradorImg],
+    googleMapsUrl: "https://maps.app.goo.gl/szPJCTAYiTBEKHMa8",
     horario: {
       lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
@@ -70,6 +73,7 @@ export const sucursales: Sucursal[] = [
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Wi-Fi"],
     imagenes: [villarosaImg, villarosa2Img, carne4Img],
+    googleMapsUrl: "https://maps.app.goo.gl/C59uzebQDPYvKZJX6",
     horario: {
       lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
@@ -86,6 +90,7 @@ export const sucursales: Sucursal[] = [
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Parking"],
     imagenes: [sourdeauxImg, carne1Img, mostradorImg],
+    googleMapsUrl: "https://maps.app.goo.gl/gx6AjCem7ttZ1g5VA",
     horario: {
       lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
@@ -102,6 +107,7 @@ export const sucursales: Sucursal[] = [
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Wi-Fi"],
     imagenes: [carne3Img, carne4Img, carne2Img],
+    googleMapsUrl: "https://maps.app.goo.gl/EyRb6zBLcAofkWka6",
     horario: {
       lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
@@ -118,6 +124,7 @@ export const sucursales: Sucursal[] = [
     email: "info@boutiquelapaz.com",
     servicios: ["Venta minorista", "Delivery", "Parking", "Wi-Fi"],
     imagenes: [carne1Img, carne2Img, carne4Img],
+    googleMapsUrl: "https://maps.app.goo.gl/J11FoqoSusqb3bev5",
     horario: {
       lunesSabado: { apertura1: "08:00", cierre1: "13:00", apertura2: "17:00", cierre2: "21:00" },
       domingoFeriados: { apertura: "08:00", cierre: "13:00" },
@@ -151,7 +158,7 @@ export function estaAbierta(sucursal: Sucursal): boolean {
 }
 
 export function getGoogleMapsUrl(sucursal: Sucursal): string {
-  return `https://www.google.com/maps/dir/?api=1&destination=${sucursal.lat},${sucursal.lng}`;
+  return sucursal.googleMapsUrl;
 }
 
 export function getWhatsAppUrl(sucursal: Sucursal): string {
