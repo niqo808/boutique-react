@@ -107,19 +107,6 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
           <p>Dom y Feriados: 8:00–13:00</p>
         </div>
 
-        {/* Services */}
-        <div className="flex flex-wrap gap-1.5">
-          {sucursal.servicios.map((s) => (
-            <Badge
-              key={s}
-              variant="outline"
-              className="text-xs font-body bg-muted/50"
-            >
-              {s}
-            </Badge>
-          ))}
-        </div>
-
         {/* Action buttons */}
         <div className="flex gap-2 pt-1">
           <Button

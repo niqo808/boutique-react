@@ -11,13 +11,13 @@ import contactoImg from "@/assets/contacto.jpg";
 import mostrador from "@/assets/sucursales/mostrador.jpeg";
 import sourdeaux from "@/assets/sucursales/sourdeaux.jpeg";
 import villarosa from "@/assets/sucursales/villarosa.jpeg";
-import villarosa2 from "@/assets/sucursales/villarosa2.jpeg";
+import villademayo from "@/assets/sucursales/villademayo.jpeg";
 import central from "@/assets/sucursales/central.jpeg";
 import central2 from "@/assets/sucursales/central2.jpeg";
 
 const timeline = [
   { year: "1994", title: "Los Comienzos", desc: "Apertura de nuestra primera boutique en Villa Rosa. Un sueño familiar se hace realidad.", image: central2 },
-  { year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: villarosa2 },
+  { year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: villademayo },
   { year: "2012", title: "Tecnología y Tradición", desc: "Incorporamos cámaras frigoríficas de última generación manteniendo nuestros métodos artesanales.", image: mostrador },
   { year: "2018", title: "Cadena de Frío Propia", desc: "Lanzamos nuestro servicio de delivery con flota refrigerada, garantizando calidad hasta tu puerta.", image: sourdeaux },
   { year: "2024", title: "Líder del Mercado", desc: "5 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: central },
@@ -49,9 +49,9 @@ const process = [
 const gallery = [
   { image: mostrador, label: "Cortes Premium" },
   { image: villarosa, label: "Maestros Carniceros" },
-  { image: villarosa2, label: "Tecnología de Frío" },
+  { image: villademayo, label: "Tecnología de Frío" },
   { image: central, label: "Nuestras Sucursales" },
-  { image: central2, label: "Atención Personalizada" },
+  { image: contactoImg, label: "Atención Personalizada" },
 ];
 
 export default function SobreNosotros() {

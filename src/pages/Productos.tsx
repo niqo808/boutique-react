@@ -56,15 +56,15 @@ const products: Product[] = [
   { name: "Bife de Cerdo", category: "cerdo", image: bifeCerdoImg, description: "Bife tierno y sabroso de cerdo fresco. Ideal para plancha, parrilla o preparaciones rápidas con excelente sabor.", cooking: "Plancha/Parrilla", time: "12-15min" },
   { name: "Bondiola", category: "cerdo", premium: true, image: bondiolaImg, description: "Corte clásico del cerdo, tierno y jugoso. Perfecto para horno lento o asados con resultados excepcionales.", cooking: "Horno/Parrilla", time: "60-90min" },
   { name: "Pechito de Cerdo", category: "cerdo", image: pechitoCerdoImg, description: "Pieza tierna y sabrosa del cerdo. Ideal para cocciones largas en horno o brasero manteniendo su jugosidad.", cooking: "Horno/Brasero", time: "45-60min" },
-  { name: "Chorizos", category: "cerdo", image: chorizosImg, description: "Embutidos frescos de cerdo bien sazonados. Listos para parrilla o plancha, con auténtico sabor argentino.", cooking: "Parrilla", time: "8-12min" },
+  { name: "Chorizos", category: "cerdo", image: chorizosImg, description: "Chorizo de cerdo (hilo amarillo): clásico, sabroso y jugoso, ideal para la parrilla. Chorizo mezcla (hilo verde): equilibrado y rendidor, perfecto para asar.", cooking: "Parrilla", time: "8-12min" },
   { name: "Morcilla", category: "cerdo", image: morcillaImg, description: "Embutido tradicional de cerdo y sangre. Parte esencial de una buena parrillada, con sabor profundo y único.", cooking: "Parrilla", time: "5-8min" },
 
   // CHICKEN / POLLO
   { name: "Supremas", category: "pollo", image: supremasImg, description: "Pechuga de pollo de primera calidad con ala. Versátil y magra, perfecta para plancha, parrilla u horno.", cooking: "Plancha/Parrilla", time: "12-15min" },
-  { name: "Pata y Muslo", category: "pollo", image: patayMusloImg, description: "Corte jugoso y sabroso de pollo fresco. Con más sabor que la pechuga, ideal para guisos y cocciones lenta.", cooking: "Horno/Guiso", time: "35-45min" },
+  { name: "Pata y Muslo", category: "pollo", image: patayMusloImg, description: "Corte jugoso y lleno de sabor, más intenso que la pechuga. Ideal para parrilla, horno, guisos y cocciones lentas. Queda tierno por dentro y bien dorado por fuera.", cooking: "Horno/Guiso/Parrilla", time: "35-45min" },
 
   // OTHER / OTROS
-  { name: "Milanesas", category: "vacuna", image: milanesasImg, description: "Cortes de vacuno listos para rebozar y freír. Clásicas milanesas napolitanas o simples, siempre deliciosas.", cooking: "Sartén/Horno", time: "8-12min" },
+  { name: "Milanesas", category: "vacuna", image: milanesasImg, description: "Milanesas listas para cocinar, bien rebozadas y parejas. Disponibles de pollo, cerdo y carne vacuna. Ideales para freír u hornear, simples o para hacer napolitanas.", cooking: "Sartén/Horno", time: "8-12min" },
 ];
 
 const categories: { value: Category; label: string }[] = [
