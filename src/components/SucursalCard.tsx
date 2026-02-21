@@ -13,56 +13,56 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const abierta = estaAbierta(sucursal);
 
-  const prevSlide = () => setSlideIndex((i) => (i === 0 ? sucursal.imagenes.length - 1 : i - 1));
-  const nextSlide = () => setSlideIndex((i) => (i === sucursal.imagenes.length - 1 ? 0 : i + 1));
+  const prevSlide = () => setSlideIndex((i) => i === 0 ? sucursal.imagenes.length - 1 : i - 1);
+  const nextSlide = () => setSlideIndex((i) => i === sucursal.imagenes.length - 1 ? 0 : i + 1);
 
   return (
-    <div className="glass rounded-xl overflow-hidden animate-scale-in w-[340px] max-w-[90vw] max-h-[85vh] overflow-y-auto">
+    <div className="glass rounded-xl overflow-hidden animate-scale-in w-[340px] max-w-[90vw] max-h-[85vh] overflow-y-auto bg-muted">
       {/* Image slider */}
       <div className="relative h-40 bg-muted">
         <img
           src={sucursal.imagenes[slideIndex]}
           alt={`${sucursal.nombre} imagen ${slideIndex + 1}`}
-          className="w-full h-full object-cover"
-        />
-        {sucursal.imagenes.length > 1 && (
-          <>
+          className="w-full h-full object-cover" />
+
+        {sucursal.imagenes.length > 1 &&
+        <>
             <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm rounded-full p-1 hover:bg-background/80 transition"
-            >
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm rounded-full p-1 hover:bg-background/80 transition">
+
               <ChevronLeft size={16} />
             </button>
             <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm rounded-full p-1 hover:bg-background/80 transition"
-            >
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm rounded-full p-1 hover:bg-background/80 transition">
+
               <ChevronRight size={16} />
             </button>
           </>
-        )}
+        }
         {/* Dots */}
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-          {sucursal.imagenes.map((_, i) => (
-            <div
-              key={i}
-              className={`w-1.5 h-1.5 rounded-full transition-all ${
-                i === slideIndex ? "bg-secondary w-3" : "bg-background/60"
-              }`}
-            />
-          ))}
+          {sucursal.imagenes.map((_, i) =>
+          <div
+            key={i}
+            className={`w-1.5 h-1.5 rounded-full transition-all ${
+            i === slideIndex ? "bg-secondary w-3" : "bg-background/60"}`
+            } />
+
+          )}
         </div>
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 bg-background/60 backdrop-blur-sm rounded-full p-1 hover:bg-background/80 transition"
-        >
+          className="absolute top-2 right-2 bg-background/60 backdrop-blur-sm rounded-full p-1 hover:bg-background/80 transition">
+
           <X size={16} />
         </button>
       </div>
 
       {/* Content */}
-      <div className="p-4 space-y-3">
+      <div className="p-4 space-y-3 bg-card">
         {/* Title + status */}
         <div className="flex items-start justify-between gap-2">
           <div>
@@ -76,11 +76,11 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
           </div>
           <Badge
             className={`shrink-0 text-xs font-body ${
-              abierta
-                ? "bg-green-500/20 text-green-700 border-green-500/30"
-                : "bg-destructive/20 text-destructive border-destructive/30"
-            }`}
-          >
+            abierta ?
+            "bg-green-500/20 text-green-700 border-green-500/30" :
+            "bg-destructive/20 text-destructive border-destructive/30"}`
+            }>
+
             {abierta ? "Abierto" : "Cerrado"}
           </Badge>
         </div>
@@ -112,8 +112,8 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
           <Button
             size="sm"
             className="flex-1 font-body text-xs"
-            onClick={() => window.open(getGoogleMapsUrl(sucursal), "_blank")}
-          >
+            onClick={() => window.open(getGoogleMapsUrl(sucursal), "_blank")}>
+
             <Navigation size={14} />
             Cómo llegar
           </Button>
@@ -121,13 +121,13 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
             size="sm"
             variant="outline"
             className="flex-1 font-body text-xs border-green-600/40 text-green-700 hover:bg-green-50"
-            onClick={() => window.open(getWhatsAppUrl(sucursal), "_blank")}
-          >
+            onClick={() => window.open(getWhatsAppUrl(sucursal), "_blank")}>
+
             <MessageCircle size={14} />
             WhatsApp
           </Button>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 }
