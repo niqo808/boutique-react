@@ -72,14 +72,14 @@ export default function SucursalDrawer({
             className="md:hidden fixed inset-0 z-[850] bg-foreground/20 backdrop-blur-sm"
             onClick={onToggle}
           />
-          <div className="md:hidden fixed z-[900] bottom-0 left-0 right-0 glass rounded-t-2xl max-h-[60vh] animate-slide-in-bottom">
-            <div className="flex justify-center pt-3 pb-1">
-              <div className="w-10 h-1 rounded-full bg-muted-foreground/30" />
+          <div className="md:hidden fixed z-[900] bottom-0 left-0 right-0 glass rounded-t-2xl max-h-[60vh] animate-slide-in-bottom flex flex-col">
+            <div className="flex justify-center pt-3 pb-1 shrink-0 cursor-grab" onClick={onToggle}>
+              <div className="w-12 h-1.5 rounded-full bg-muted-foreground/40" />
             </div>
-            <div className="p-4 border-b border-border/30">
+            <div className="p-4 border-b border-border/30 shrink-0">
               <h2 className="font-display text-lg font-bold text-foreground">Sucursales</h2>
             </div>
-            <div className="overflow-y-auto max-h-[45vh]">
+            <div className="overflow-y-auto flex-1 overscroll-contain touch-pan-y">
               {sucursales.map((s) => (
                 <SucursalListItem
                   key={s.id}

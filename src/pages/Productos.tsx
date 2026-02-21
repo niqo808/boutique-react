@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/landing/Footer";
 import PageTransition from "@/components/PageTransition";
 import AnimatedSection from "@/components/AnimatedSection";
+import ParallaxHero from "@/components/ParallaxHero";
 import { staggerChild } from "@/components/StaggerGrid";
 import { Award, Snowflake, Truck, Flame, Clock, MessageCircle } from "lucide-react";
 
@@ -83,10 +84,8 @@ export default function Productos() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
-          <img src={productosImg} alt="Productos" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-foreground/70" />
-          <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
+        <ParallaxHero image={productosImg} alt="Productos">
+          <AnimatedSection variant="fadeUp" className="text-center px-6">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
               Nuestros Cortes Premium
             </h1>
@@ -112,7 +111,7 @@ export default function Productos() {
               ))}
             </div>
           </AnimatedSection>
-        </section>
+        </ParallaxHero>
 
         {/* FILTERS */}
         <section className="py-8 bg-muted/30 border-b border-border">
