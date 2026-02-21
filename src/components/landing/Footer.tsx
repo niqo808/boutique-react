@@ -44,7 +44,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <motion.footer 
-      className="bg-foreground text-background"
+      className="bg-[hsl(355,41%,12%)] text-[hsl(40,100%,97%)]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -70,7 +70,7 @@ export default function Footer() {
               whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
               transition={{ duration: 0.5 }}
             />
-            <p className="font-body text-background/60 text-sm">
+            <p className="font-body text-[hsl(40,100%,97%)]/60 text-sm">
               Excelencia en cada corte desde 1994
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ export default function Footer() {
                 >
                   <Link
                     to={l.href}
-                    className="font-body text-sm text-background/70 hover:text-secondary transition-colors inline-block"
+                    className="font-body text-sm text-[hsl(40,100%,97%)]/70 hover:text-secondary transition-colors inline-block"
                   >
                     <motion.span
                       whileHover={{ x: 5 }}
@@ -106,7 +106,7 @@ export default function Footer() {
           {/* Contact */}
           <motion.div variants={staggerItem}>
             <h4 className="font-display font-bold text-secondary mb-4">Contacto</h4>
-            <div className="space-y-2 font-body text-sm text-background/70">
+            <div className="space-y-2 font-body text-sm text-[hsl(40,100%,97%)]/70">
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -144,7 +144,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70"
+                  className="w-10 h-10 rounded-full bg-[hsl(40,100%,97%)]/10 flex items-center justify-center text-[hsl(40,100%,97%)]/70"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -165,13 +165,13 @@ export default function Footer() {
       </div>
 
       <motion.div 
-        className="border-t border-background/10 py-4"
+        className="border-t border-[hsl(40,100%,97%)]/10 py-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
       >
-        <p className="text-center font-body text-sm text-background/50">
+        <p className="text-center font-body text-sm text-[hsl(40,100%,97%)]/50">
           © 2025 La Paz. Todos los derechos reservados.
         </p>
       </motion.div>

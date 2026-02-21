@@ -49,7 +49,7 @@ export default function Header() {
             <span className="text-xl font-display font-bold text-primary tracking-wide leading-tight">
               La Paz
             </span>
-            <span className="text-[10px] font-body text-secondary uppercase tracking-widest">
+            <span className="text-[10px] font-body text-muted-foreground uppercase tracking-widest">
               Boutique de Carnes
             </span>
           </motion.div>

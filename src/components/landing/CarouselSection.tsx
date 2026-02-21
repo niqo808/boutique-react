@@ -80,15 +80,15 @@ export default function CarouselSection() {
           {/* Navigation */}
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm rounded-full p-2 hover:bg-background/80 transition z-10"
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition z-10"
           >
-            <ChevronLeft size={20} className="text-foreground" />
+            <ChevronLeft size={28} />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 bg-background/60 backdrop-blur-sm rounded-full p-2 hover:bg-background/80 transition z-10"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition z-10"
           >
-            <ChevronRight size={20} className="text-foreground" />
+            <ChevronRight size={28} />
           </button>
 
           {/* Dots */}
