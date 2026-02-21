@@ -6,11 +6,11 @@ import { Variants, Transition } from "framer-motion";
 // ============================================
 
 export const timing = {
-  instant: 0.15,
-  fast: 0.3,
-  normal: 0.5,
-  slow: 0.8,
-  verySlow: 1.2,
+  instant: 0.2,
+  fast: 0.4,
+  normal: 0.65,
+  slow: 1.0,
+  verySlow: 1.5,
 } as const;
 
 export const easing = {
