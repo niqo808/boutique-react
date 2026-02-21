@@ -43,7 +43,7 @@ export default function AnimatedSection({
   className = "",
   variant = "fadeUp",
   delay = 0,
-  duration = 0.6,
+  duration = 0.8,
   once = true,
   margin = "-80px",
 }: AnimatedSectionProps) {

@@ -13,7 +13,7 @@ export default function PageTransition({ children, className = "" }: PageTransit
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4, ease: [0.645, 0.045, 0.355, 1.0] }}
+      transition={{ duration: 0.55, ease: [0.645, 0.045, 0.355, 1.0] }}
     >
       {children}
     </motion.div>

@@ -11,8 +11,8 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.15,
+      staggerChildren: 0.13,
+      delayChildren: 0.2,
     },
   },
 };
@@ -23,7 +23,7 @@ export const staggerChild = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.65,
       ease: [0.645, 0.045, 0.355, 1.0] as [number, number, number, number],
     },
   },
