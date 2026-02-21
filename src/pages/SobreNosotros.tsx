@@ -17,43 +17,43 @@ import central from "@/assets/sucursales/central.jpeg";
 import central2 from "@/assets/sucursales/central2.jpeg";
 
 const timeline = [
-{ year: "1994", title: "Los Comienzos", desc: "Apertura de nuestra primera boutique en Villa Rosa. Un sueño familiar se hace realidad.", image: central2 },
-{ year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: villademayo },
-{ year: "2012", title: "Tecnología y Tradición", desc: "Incorporamos cámaras frigoríficas de última generación manteniendo nuestros métodos artesanales.", image: mostrador },
-{ year: "2018", title: "Cadena de Frío Propia", desc: "Lanzamos nuestro servicio de delivery con flota refrigerada, garantizando calidad hasta tu puerta.", image: sourdeaux },
-{ year: "2024", title: "Líder del Mercado", desc: "5 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: central }];
-
+  { year: "1994", title: "Los Comienzos", desc: "Apertura de nuestra primera boutique en Villa Rosa. Un sueño familiar se hace realidad.", image: central2 },
+  { year: "2005", title: "Expansión Regional", desc: "Abrimos 3 sucursales más en zona norte. Nuestro compromiso con la calidad nos hace crecer.", image: villademayo },
+  { year: "2012", title: "Tecnología y Tradición", desc: "Incorporamos cámaras frigoríficas de última generación manteniendo nuestros métodos artesanales.", image: mostrador },
+  { year: "2018", title: "Cadena de Frío Propia", desc: "Lanzamos nuestro servicio de delivery con flota refrigerada, garantizando calidad hasta tu puerta.", image: sourdeaux },
+  { year: "2024", title: "Líder del Mercado", desc: "5 sucursales, más de 500 clientes corporativos y el reconocimiento como la mejor boutique de carnes de Buenos Aires.", image: central },
+];
 
 const stats = [
-{ icon: <Store className="w-8 h-8" />, value: "5", label: "Sucursales" },
-{ icon: <CalendarDays className="w-8 h-8" />, value: "+25", label: "Años de Experiencia" },
-{ icon: <Handshake className="w-8 h-8" />, value: "+500", label: "Clientes Corporativos" },
-{ icon: <Truck className="w-8 h-8" />, value: "+1000", label: "Entregas Mensuales" }];
-
+  { icon: <Store className="w-8 h-8" />, value: "5", label: "Sucursales" },
+  { icon: <CalendarDays className="w-8 h-8" />, value: "+25", label: "Años de Experiencia" },
+  { icon: <Handshake className="w-8 h-8" />, value: "+500", label: "Clientes Corporativos" },
+  { icon: <Truck className="w-8 h-8" />, value: "+1000", label: "Entregas Mensuales" },
+];
 
 const values = [
-{ icon: <Gem className="w-7 h-7" />, title: "Calidad Premium", desc: "Seleccionamos únicamente cortes de la más alta calidad, elegidos por maestros carniceros con más de 30 años de experiencia." },
-{ icon: <Snowflake className="w-7 h-7" />, title: "Cadena de Frío", desc: "Tecnología de vanguardia en refrigeración para garantizar frescura y calidad desde el origen hasta la entrega." },
-{ icon: <Users className="w-7 h-7" />, title: "Servicio Personalizado", desc: "Nuestros expertos te guían en la selección de cortes según tus necesidades culinarias." },
-{ icon: <Star className="w-7 h-7" />, title: "Innovación Constante", desc: "Combinamos técnicas artesanales con las últimas tecnologías para mejorar la experiencia del cliente." },
-{ icon: <Heart className="w-7 h-7" />, title: "Tradición Familiar", desc: "Empresa familiar fundada en 1994, preservamos los valores que nos convirtieron en líderes del mercado." },
-{ icon: <Target className="w-7 h-7" />, title: "Excelencia Operativa", desc: "Estándares de excelencia en todas nuestras operaciones, desde la selección hasta la entrega." }];
-
+  { icon: <Gem className="w-7 h-7" />, title: "Calidad Premium", desc: "Seleccionamos únicamente cortes de la más alta calidad, elegidos por maestros carniceros con más de 30 años de experiencia." },
+  { icon: <Snowflake className="w-7 h-7" />, title: "Cadena de Frío", desc: "Tecnología de vanguardia en refrigeración para garantizar frescura y calidad desde el origen hasta la entrega." },
+  { icon: <Users className="w-7 h-7" />, title: "Servicio Personalizado", desc: "Nuestros expertos te guían en la selección de cortes según tus necesidades culinarias." },
+  { icon: <Star className="w-7 h-7" />, title: "Innovación Constante", desc: "Combinamos técnicas artesanales con las últimas tecnologías para mejorar la experiencia del cliente." },
+  { icon: <Heart className="w-7 h-7" />, title: "Tradición Familiar", desc: "Empresa familiar fundada en 1994, preservamos los valores que nos convirtieron en líderes del mercado." },
+  { icon: <Target className="w-7 h-7" />, title: "Excelencia Operativa", desc: "Estándares de excelencia en todas nuestras operaciones, desde la selección hasta la entrega." },
+];
 
 const process = [
-{ step: "01", title: "Selección Rigurosa", desc: "Nuestros expertos visitan frigoríficos seleccionados, eligiendo solo animales de primera calidad con certificación de origen.", image: asadoImg },
-{ step: "02", title: "Maduración Controlada", desc: "Cada corte pasa por un proceso de maduración en cámaras especiales con temperatura y humedad precisas.", image: mostrador },
-{ step: "03", title: "Corte Artesanal", desc: "Maestros carniceros con más de 20 años de experiencia preparan cada pieza con precisión milimétrica.", image: villarosa },
-{ step: "04", title: "Entrega Refrigerada", desc: "Nuestra flota propia con sistema de frío garantiza que llegue en perfectas condiciones a tu puerta.", image: sourdeaux }];
-
+  { step: "01", title: "Selección Rigurosa", desc: "Nuestros expertos visitan frigoríficos seleccionados, eligiendo solo animales de primera calidad con certificación de origen.", image: asadoImg },
+  { step: "02", title: "Maduración Controlada", desc: "Cada corte pasa por un proceso de maduración en cámaras especiales con temperatura y humedad precisas.", image: mostrador },
+  { step: "03", title: "Corte Artesanal", desc: "Maestros carniceros con más de 20 años de experiencia preparan cada pieza con precisión milimétrica.", image: villarosa },
+  { step: "04", title: "Entrega Refrigerada", desc: "Nuestra flota propia con sistema de frío garantiza que llegue en perfectas condiciones a tu puerta.", image: sourdeaux },
+];
 
 const gallery = [
-{ image: mostrador, label: "Cortes Premium" },
-{ image: villarosa, label: "Maestros Carniceros" },
-{ image: villademayo, label: "Tecnología de Frío" },
-{ image: central, label: "Nuestras Sucursales" },
-{ image: contactoImg, label: "Atención Personalizada" }];
-
+  { image: mostrador, label: "Cortes Premium" },
+  { image: villarosa, label: "Maestros Carniceros" },
+  { image: villademayo, label: "Tecnología de Frío" },
+  { image: central, label: "Nuestras Sucursales" },
+  { image: contactoImg, label: "Atención Personalizada" },
+];
 
 export default function SobreNosotros() {
   return (
@@ -91,7 +91,7 @@ export default function SobreNosotros() {
               <p>
                 <strong className="text-foreground">Somos proveedores de confianza.</strong> Suministramos carne a restaurantes y establecimientos que buscan lo mejor, adaptándonos a los más altos estándares del sector.
               </p>
-              <p className="text-center text-lg font-semibold italic pt-4 text-primary">
+              <p className="text-center text-lg text-primary font-semibold italic pt-4">
                 Unite a nuestra familia para descubrir cómo podemos contribuir al éxito de tu negocio y disfrutar de productos cárnicos excepcionales en tu hogar.
               </p>
               <p className="text-center text-xl text-secondary font-bold tracking-wider pt-2">
@@ -111,16 +111,16 @@ export default function SobreNosotros() {
             <div className="relative">
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border hidden md:block" />
               <div className="space-y-12">
-                {timeline.map((item, i) =>
-                <AnimatedSection
-                  key={item.year}
-                  variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}
-                  delay={i * 0.1}>
-
+                {timeline.map((item, i) => (
+                  <AnimatedSection
+                    key={item.year}
+                    variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}
+                    delay={i * 0.1}
+                  >
                     <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                       <div className="flex-1">
                         <div className="glass rounded-xl p-6">
-                          <span className="font-display text-2xl font-bold text-secondary">{item.year}</span>
+                          <span className="font-display text-2xl font-bold text-primary">{item.year}</span>
                           <h3 className="font-display text-lg font-bold text-foreground mt-2">{item.title}</h3>
                           <p className="font-body text-muted-foreground text-sm mt-2">{item.desc}</p>
                           <div className="mt-4 rounded-lg overflow-hidden h-40">
@@ -132,7 +132,7 @@ export default function SobreNosotros() {
                       <div className="flex-1 hidden md:block" />
                     </div>
                   </AnimatedSection>
-                )}
+                ))}
               </div>
             </div>
           </div>
@@ -141,19 +141,19 @@ export default function SobreNosotros() {
         {/* STATS */}
         <section className="relative py-20 overflow-hidden">
           <img src={asadoImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#392224]/75" />
+          <div className="absolute inset-0 bg-foreground/80" />
           <div className="relative z-10 container mx-auto px-6 max-w-5xl">
             <AnimatedSection variant="fadeUp">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-12">La Paz en Números</h2>
             </AnimatedSection>
             <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((s) =>
-              <motion.div key={s.label} variants={staggerChild} className="glass-dark rounded-xl p-6 text-center">
+              {stats.map((s) => (
+                <motion.div key={s.label} variants={staggerChild} className="glass-dark rounded-xl p-6 text-center">
                   <div className="text-secondary mb-3 flex justify-center">{s.icon}</div>
                   <div className="font-display text-3xl font-bold text-primary-foreground">{s.value}</div>
                   <div className="font-body text-sm text-primary-foreground/70 mt-1">{s.label}</div>
                 </motion.div>
-              )}
+              ))}
             </StaggerGrid>
           </div>
         </section>
@@ -166,19 +166,19 @@ export default function SobreNosotros() {
               <p className="font-body text-muted-foreground text-center mb-12">Los valores que nos definen</p>
             </AnimatedSection>
             <StaggerGrid className="grid md:grid-cols-3 gap-6">
-              {values.map((v) =>
-              <motion.div
-                key={v.title}
-                variants={staggerChild}
-                whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(114, 47, 55, 0.12)" }}
-                transition={{ duration: 0.3 }}
-                className="glass rounded-xl p-6 transition-all duration-300">
-
+              {values.map((v) => (
+                <motion.div
+                  key={v.title}
+                  variants={staggerChild}
+                  whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(114, 47, 55, 0.12)" }}
+                  transition={{ duration: 0.3 }}
+                  className="glass rounded-xl p-6 transition-all duration-300"
+                >
                   <div className="text-primary mb-4">{v.icon}</div>
                   <h3 className="font-display text-lg font-bold text-foreground mb-2">{v.title}</h3>
                   <p className="font-body text-muted-foreground text-sm">{v.desc}</p>
                 </motion.div>
-              )}
+              ))}
             </StaggerGrid>
           </div>
         </section>
@@ -191,20 +191,20 @@ export default function SobreNosotros() {
               <p className="font-body text-muted-foreground text-center mb-14">De la selección a tu mesa</p>
             </AnimatedSection>
             <div className="space-y-8">
-              {process.map((p, i) =>
-              <AnimatedSection key={p.step} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"} delay={i * 0.1}>
+              {process.map((p, i) => (
+                <AnimatedSection key={p.step} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"} delay={i * 0.1}>
                   <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                     <div className="md:w-1/2 rounded-xl overflow-hidden h-64">
                       <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="md:w-1/2">
-                      <span className="font-display text-5xl font-bold text-secondary">{p.step}</span>
+                      <span className="font-display text-5xl font-bold text-primary/20">{p.step}</span>
                       <h3 className="font-display text-xl font-bold text-foreground mt-2">{p.title}</h3>
                       <p className="font-body text-muted-foreground mt-3">{p.desc}</p>
                     </div>
                   </div>
                 </AnimatedSection>
-              )}
+              ))}
             </div>
           </div>
         </section>
@@ -217,18 +217,18 @@ export default function SobreNosotros() {
               <p className="font-body text-muted-foreground text-center mb-12">Imágenes que cuentan nuestra historia</p>
             </AnimatedSection>
             <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {gallery.map((g) =>
-              <motion.div
-                key={g.label}
-                variants={staggerChild}
-                className="group relative rounded-xl overflow-hidden h-56 cursor-pointer">
-
+              {gallery.map((g) => (
+                <motion.div
+                  key={g.label}
+                  variants={staggerChild}
+                  className="group relative rounded-xl overflow-hidden h-56 cursor-pointer"
+                >
                   <img src={g.image} alt={g.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 transition-all duration-300 flex items-center justify-center bg-[#392224]/[0.18]">
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-all duration-300 flex items-center justify-center">
                     <span className="font-body text-primary-foreground font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">{g.label}</span>
                   </div>
                 </motion.div>
-              )}
+              ))}
             </StaggerGrid>
           </div>
         </section>
@@ -236,7 +236,7 @@ export default function SobreNosotros() {
         {/* CTA */}
         <section className="relative py-20 overflow-hidden">
           <img src={contactoImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#392224]/[0.68]" />
+          <div className="absolute inset-0 bg-foreground/80" />
           <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
               ¿Querés Experimentar la Diferencia?
@@ -249,8 +249,8 @@ export default function SobreNosotros() {
                 <motion.span
                   className="inline-block bg-primary text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}>
-
+                  whileTap={{ scale: 0.95 }}
+                >
                   Ver Sucursales
                 </motion.span>
               </Link>
@@ -258,8 +258,8 @@ export default function SobreNosotros() {
                 <motion.span
                   className="inline-block border-2 border-primary-foreground text-primary-foreground font-body font-semibold px-8 py-3 rounded-lg hover:bg-primary-foreground/10 transition-colors"
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}>
-
+                  whileTap={{ scale: 0.95 }}
+                >
                   Contactanos
                 </motion.span>
               </Link>
@@ -268,6 +268,6 @@ export default function SobreNosotros() {
         </section>
       </main>
       <Footer />
-    </PageTransition>);
-
+    </PageTransition>
+  );
 }
