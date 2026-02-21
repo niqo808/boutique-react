@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
 import { 
   navbarSlide, 
   staggerContainer, 
@@ -92,8 +93,10 @@ export default function Header() {
           ))}
         </motion.nav>
 
-        {/* Mobile toggle */}
-        <motion.button
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          {/* Mobile toggle */}
+          <motion.button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2 text-primary"
           aria-label="Toggle menu"
@@ -124,6 +127,7 @@ export default function Header() {
             )}
           </AnimatePresence>
         </motion.button>
+        </div>
       </div>
 
       {/* Mobile menu */}

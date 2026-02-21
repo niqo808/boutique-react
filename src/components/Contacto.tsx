@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Phone, Mail, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import StaggerGrid, { staggerChild } from "@/components/StaggerGrid";
+import ParallaxHero from "@/components/ParallaxHero";
 import contactoImg from "@/assets/contacto.jpg";
 
 const contactSchema = z.object({
@@ -61,10 +62,8 @@ export default function ContactView() {
   return (
     <div className="w-full">
       {/* Hero */}
-      <section className="relative h-[45vh] min-h-[300px] flex items-center justify-center overflow-hidden">
-        <img src={contactoImg} alt="Contacto" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/70" />
-        <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
+      <ParallaxHero image={contactoImg} alt="Contacto" height="h-[45vh]" minHeight="min-h-[300px]">
+        <AnimatedSection variant="fadeUp" className="text-center px-6">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-3">
             Contactanos
           </h1>
@@ -72,7 +71,7 @@ export default function ContactView() {
             Estamos para ayudarte
           </p>
         </AnimatedSection>
-      </section>
+      </ParallaxHero>
 
       {/* Content */}
       <section className="py-16 md:py-20 bg-background">

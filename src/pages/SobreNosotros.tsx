@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/landing/Footer";
 import PageTransition from "@/components/PageTransition";
 import AnimatedSection from "@/components/AnimatedSection";
+import ParallaxHero from "@/components/ParallaxHero";
 import StaggerGrid, { staggerChild } from "@/components/StaggerGrid";
 import { Store, CalendarDays, Handshake, Truck, Gem, Snowflake, Users, Star, Target, Heart } from "lucide-react";
 import asadoImg from "@/assets/asado.jpeg";
@@ -60,10 +61,8 @@ export default function SobreNosotros() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-          <img src={mostrador} alt="Sobre nosotros" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-foreground/70" />
-          <AnimatedSection variant="fadeUp" className="relative z-10 text-center px-6">
+        <ParallaxHero image={mostrador} alt="Sobre nosotros" height="h-[60vh]" minHeight="min-h-[400px]">
+          <AnimatedSection variant="fadeUp" className="text-center px-6">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
               Descubrí Nuestra Historia
             </h1>
@@ -71,7 +70,7 @@ export default function SobreNosotros() {
               Más de 25 años de pasión por la excelencia
             </p>
           </AnimatedSection>
-        </section>
+        </ParallaxHero>
 
         {/* INTRO */}
         <section className="py-20 bg-background">
