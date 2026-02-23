@@ -17,7 +17,9 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
   const nextSlide = () => setSlideIndex((i) => (i === sucursal.imagenes.length - 1 ? 0 : i + 1));
 
   return (
-    <div className="glass rounded-xl overflow-hidden animate-scale-in w-[340px] max-w-[90vw] max-h-[85vh] overflow-y-auto">
+    <div className="relative glass rounded-xl overflow-hidden animate-scale-in w-[340px] max-w-[90vw] max-h-[85vh] overflow-y-auto">
+      {/* Dark-mode only subtle darken overlay to make cards sit darker than the page background */}
+      <div className="absolute inset-0 pointer-events-none rounded-xl dark:bg-black/20" />
       {/* Image slider */}
       <div className="relative h-40 bg-muted">
         <img

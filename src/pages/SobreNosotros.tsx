@@ -150,7 +150,7 @@ export default function SobreNosotros() {
               {stats.map((s) => (
                 <motion.div key={s.label} variants={staggerChild} className="glass-dark rounded-xl p-6 text-center">
                   <div className="text-secondary mb-3 flex justify-center">{s.icon}</div>
-                  <div className="font-display text-3xl font-bold text-primary-foreground">{s.value}</div>
+                  <div className="font-display text-3xl font-bold text-primary-foreground dark:text-secondary">{s.value}</div>
                   <div className="font-body text-sm text-primary-foreground/70 mt-1">{s.label}</div>
                 </motion.div>
               ))}

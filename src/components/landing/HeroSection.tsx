@@ -30,7 +30,7 @@ export default function HeroSection() {
           alt="Boutique de Carne La Paz"
           className="w-full h-full object-cover scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
+        <div className="absolute inset-0 hero-overlay" />
       </motion.div>
 
       {/* Content */}
