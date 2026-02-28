@@ -244,9 +244,8 @@ export default function ContactView() {
                 <AnimatedSection variant="fadeUp" delay={0.4} className="mt-8 pt-6 border-t border-border/50">
                   <h3 className="font-display font-bold text-foreground text-sm mb-3">Horarios de Atención</h3>
                   <div className="space-y-1.5 font-body text-sm text-muted-foreground">
-                    <p>Lunes a Viernes: 8:00 - 20:00</p>
-                    <p>Sábados: 8:00 - 14:00</p>
-                    <p>Domingos: Cerrado</p>
+                    <p>Lun–Sáb: 8:00–13:00 / 17:00–21:00</p>
+                    <p>Dom y Feriados: 8:00–13:00</p>
                   </div>
                 </AnimatedSection>
 

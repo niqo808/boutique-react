@@ -116,8 +116,8 @@ function SucursalListItem({
         isSelected ? "bg-primary/10 border-l-2 border-l-primary" : ""
       }`}
     >
-      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-        <MapPin size={14} className="text-primary" />
+      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 dark:bg-red-500/25 flex items-center justify-center">
+        <MapPin size={14} className="text-primary dark:text-red-400" />
       </div>
       <div className="flex-1 min-w-0">
         <p className="font-display text-sm font-semibold text-foreground truncate">
@@ -131,7 +131,7 @@ function SucursalListItem({
         className={`shrink-0 text-[10px] font-body ${
           abierta
             ? "bg-green-500/20 text-green-700 border-green-500/30"
-            : "bg-destructive/20 text-destructive border-destructive/30"
+            : "bg-destructive/20 text-destructive border-destructive/30 dark:bg-red-500/25 dark:text-red-400 dark:border-red-500/40"
         }`}
       >
         {abierta ? "Abierto" : "Cerrado"}

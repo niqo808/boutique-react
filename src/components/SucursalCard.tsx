@@ -18,7 +18,6 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
 
   return (
     <div className="relative glass rounded-xl overflow-hidden animate-scale-in w-[340px] max-w-[90vw] max-h-[85vh] overflow-y-auto">
-      {/* Dark-mode only subtle darken overlay to make cards sit darker than the page background */}
       <div className="absolute inset-0 pointer-events-none rounded-xl dark:bg-black/20" />
       {/* Image slider */}
       <div className="relative h-40 bg-muted">
@@ -80,7 +79,7 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
             className={`shrink-0 text-xs font-body ${
               abierta
                 ? "bg-green-500/20 text-green-700 border-green-500/30"
-                : "bg-destructive/20 text-destructive border-destructive/30"
+                : "bg-destructive/20 text-destructive border-destructive/30 dark:bg-red-500/25 dark:text-red-400 dark:border-red-500/40"
             }`}
           >
             {abierta ? "Abierto" : "Cerrado"}
@@ -122,7 +121,7 @@ export default function SucursalCard({ sucursal, onClose }: SucursalCardProps) {
           <Button
             size="sm"
             variant="outline"
-            className="flex-1 font-body text-xs border-green-600/40 text-green-700 hover:bg-green-50"
+            className="flex-1 font-body text-xs border-green-600/40 text-green-700 hover:bg-green-10"
             onClick={() => window.open(getWhatsAppUrl(sucursal), "_blank")}
           >
             <MessageCircle size={14} />

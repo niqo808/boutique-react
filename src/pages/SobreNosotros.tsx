@@ -120,7 +120,7 @@ export default function SobreNosotros() {
                     <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                       <div className="flex-1">
                         <div className="glass rounded-xl p-6">
-                          <span className="font-display text-2xl font-bold text-primary">{item.year}</span>
+                          <span className="font-display text-2xl font-bold text-primary dark:text-secondary">{item.year}</span>
                           <h3 className="font-display text-lg font-bold text-foreground mt-2">{item.title}</h3>
                           <p className="font-body text-muted-foreground text-sm mt-2">{item.desc}</p>
                           <div className="mt-4 rounded-lg overflow-hidden h-40">
@@ -183,7 +183,7 @@ export default function SobreNosotros() {
           </div>
         </section>
 
-        {/* PROCESS */}
+        {/* PROCESO */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-6 max-w-5xl">
             <AnimatedSection variant="fadeUp">
@@ -198,7 +198,7 @@ export default function SobreNosotros() {
                       <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="md:w-1/2">
-                      <span className="font-display text-5xl font-bold text-primary/20">{p.step}</span>
+                      <span className="font-display text-5xl font-bold text-primary/20 dark:text-secondary">{p.step}</span>
                       <h3 className="font-display text-xl font-bold text-foreground mt-2">{p.title}</h3>
                       <p className="font-body text-muted-foreground mt-3">{p.desc}</p>
                     </div>

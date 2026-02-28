@@ -46,7 +46,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <span className="text-xl font-display font-bold text-primary tracking-wide leading-tight">
+            <span className="text-xl font-display font-bold text-primary dark:text-destructive tracking-wide leading-tight">
               La Paz
             </span>
             <span className="text-[10px] font-body text-muted-foreground uppercase tracking-widest">

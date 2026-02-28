@@ -38,7 +38,7 @@ type Category = "all" | "vacuna" | "cerdo" | "pollo";
 
 interface Product {
   name: string;
-  category: Category;
+  category: Category[];
   premium?: boolean;
   image: string;
   description: string;
@@ -48,24 +48,24 @@ interface Product {
 
 const products: Product[] = [
   // BEEF / VACUNA
-  { name: "Asado de Tira", category: "vacuna", image: asadoImg, description: "Clásico argentino por excelencia. Jugoso, con hueso que aporta sabor único y textura perfecta para parrillas.", cooking: "Parrilla", time: "20-25min" },
-  { name: "Colita de Cuadril", category: "vacuna", image: colitaCuadrilImg, description: "Corte magro y versátil. Ideal para personas que buscan sabor sin demasiada grasa, perfecto para plancha o parrilla.", cooking: "Parrilla/Plancha", time: "15-18min" },
-  { name: "Matambrito", category: "vacuna", image: matambritoImg, description: "Corte tierno y jugoso con sabor característico. Excellent choice para asados y parrilladas tradicionales.", cooking: "Parrilla", time: "18-22min" },
-  { name: "Vacío", category: "vacuna", premium: true, image: vacioImg, description: "Corte versátil y aromático. Con su capa de grasa característica que lo hace perfectamente jugoso en la parrilla.", cooking: "Parrilla/Horno", time: "25-30min" },
+  { name: "Asado de Tira", category: ["vacuna"], image: asadoImg, description: "Clásico argentino por excelencia. Jugoso, con hueso que aporta sabor único y textura perfecta para parrillas.", cooking: "Parrilla", time: "20-25min" },
+  { name: "Colita de Cuadril", category: ["vacuna"], image: colitaCuadrilImg, description: "Corte magro y versátil. Ideal para personas que buscan sabor sin demasiada grasa, perfecto para plancha o parrilla.", cooking: "Parrilla/Plancha", time: "15-18min" },
+  { name: "Matambrito", category: ["vacuna"], image: matambritoImg, description: "Corte tierno y jugoso con sabor característico. Excellent choice para asados y parrilladas tradicionales.", cooking: "Parrilla", time: "18-22min" },
+  { name: "Vacío", category: ["vacuna"], premium: true, image: vacioImg, description: "Corte versátil y aromático. Con su capa de grasa característica que lo hace perfectamente jugoso en la parrilla.", cooking: "Parrilla/Horno", time: "25-30min" },
 
   // PORK / CERDO
-  { name: "Bife de Cerdo", category: "cerdo", image: bifeCerdoImg, description: "Bife tierno y sabroso de cerdo fresco. Ideal para plancha, parrilla o preparaciones rápidas con excelente sabor.", cooking: "Plancha/Parrilla", time: "12-15min" },
-  { name: "Bondiola", category: "cerdo", premium: true, image: bondiolaImg, description: "Corte clásico del cerdo, tierno y jugoso. Perfecto para horno lento o asados con resultados excepcionales.", cooking: "Horno/Parrilla", time: "60-90min" },
-  { name: "Pechito de Cerdo", category: "cerdo", image: pechitoCerdoImg, description: "Pieza tierna y sabrosa del cerdo. Ideal para cocciones largas en horno o brasero manteniendo su jugosidad.", cooking: "Horno/Brasero", time: "45-60min" },
-  { name: "Chorizos", category: "cerdo", image: chorizosImg, description: "Chorizo de cerdo (hilo amarillo): clásico, sabroso y jugoso, ideal para la parrilla. Chorizo mezcla (hilo verde): equilibrado y rendidor, perfecto para asar.", cooking: "Parrilla", time: "8-12min" },
-  { name: "Morcilla", category: "cerdo", image: morcillaImg, description: "Embutido tradicional de cerdo y sangre. Parte esencial de una buena parrillada, con sabor profundo y único.", cooking: "Parrilla", time: "5-8min" },
+  { name: "Bife de Cerdo", category: ["cerdo"], image: bifeCerdoImg, description: "Bife tierno y sabroso de cerdo fresco. Ideal para plancha, parrilla o preparaciones rápidas con excelente sabor.", cooking: "Plancha/Parrilla", time: "12-15min" },
+  { name: "Bondiola", category: ["cerdo"], premium: true, image: bondiolaImg, description: "Corte clásico del cerdo, tierno y jugoso. Perfecto para horno lento o asados con resultados excepcionales.", cooking: "Horno/Parrilla", time: "60-90min" },
+  { name: "Pechito de Cerdo", category: ["cerdo"], image: pechitoCerdoImg, description: "Pieza tierna y sabrosa del cerdo. Ideal para cocciones largas en horno o brasero manteniendo su jugosidad.", cooking: "Horno/Brasero", time: "45-60min" },
+  { name: "Chorizos", category: ["cerdo"], image: chorizosImg, description: "Chorizo de cerdo (hilo amarillo): clásico, sabroso y jugoso, ideal para la parrilla. Chorizo mezcla (hilo verde): equilibrado y rendidor, perfecto para asar.", cooking: "Parrilla", time: "8-12min" },
+  { name: "Morcilla", category: ["cerdo"], image: morcillaImg, description: "Embutido tradicional de cerdo y sangre. Parte esencial de una buena parrillada, con sabor profundo y único.", cooking: "Parrilla", time: "5-8min" },
 
   // CHICKEN / POLLO
-  { name: "Supremas", category: "pollo", image: supremasImg, description: "Pechuga de pollo de primera calidad con ala. Versátil y magra, perfecta para plancha, parrilla u horno.", cooking: "Plancha/Parrilla", time: "12-15min" },
-  { name: "Pata y Muslo", category: "pollo", image: patayMusloImg, description: "Corte jugoso y lleno de sabor, más intenso que la pechuga. Ideal para parrilla, horno, guisos y cocciones lentas. Queda tierno por dentro y bien dorado por fuera.", cooking: "Horno/Guiso/Parrilla", time: "35-45min" },
+  { name: "Supremas", category: ["pollo"], image: supremasImg, description: "Pechuga de pollo de primera calidad con ala. Versátil y magra, perfecta para plancha, parrilla u horno.", cooking: "Plancha/Parrilla", time: "12-15min" },
+  { name: "Pata y Muslo", category: ["pollo"], image: patayMusloImg, description: "Corte jugoso y lleno de sabor, más intenso que la pechuga. Ideal para parrilla, horno, guisos y cocciones lentas. Queda tierno por dentro y bien dorado por fuera.", cooking: "Horno/Guiso/Parrilla", time: "35-45min" },
 
   // OTHER / OTROS
-  { name: "Milanesas", category: "vacuna", image: milanesasImg, description: "Milanesas listas para cocinar, bien rebozadas y parejas. Disponibles de pollo, cerdo y carne vacuna. Ideales para freír u hornear, simples o para hacer napolitanas.", cooking: "Sartén/Horno", time: "8-12min" },
+  { name: "Milanesas", category: ["vacuna", "cerdo", "pollo"], image: milanesasImg, description: "Milanesas listas para cocinar, bien rebozadas y parejas. Disponibles de pollo, cerdo y carne vacuna. Ideales para freír u hornear, simples o para hacer napolitanas.", cooking: "Sartén/Horno", time: "8-12min" },
 ];
 
 const categories: { value: Category; label: string }[] = [
@@ -77,7 +77,7 @@ const categories: { value: Category; label: string }[] = [
 
 export default function Productos() {
   const [filter, setFilter] = useState<Category>("all");
-  const filtered = filter === "all" ? products : products.filter((p) => p.category === filter);
+  const filtered = filter === "all" ? products : products.filter((p) => p.category.includes(filter));
 
   return (
     <PageTransition className="flex flex-col min-h-screen">
@@ -178,12 +178,14 @@ export default function Productos() {
                         </span>
                       </div>
                       <div className="flex gap-3 mt-5">
-                        <Link
-                          to="/contacto"
-                          className="flex-1 text-center bg-primary text-primary-foreground font-body text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
-                        >
+                        <a
+                          href={`https://wa.me/5491161614015?text=Hola!%20Estoy%20interesado%20en%20el%20producto%20${encodeURIComponent(product.name)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center bg-green-600 text-white font-body text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                          >
                           <MessageCircle className="w-4 h-4" /> Consultar
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </motion.div>
