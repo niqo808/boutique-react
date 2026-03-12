@@ -1,6 +1,8 @@
+import { useRef } from "react";
 import { Sucursal, estaAbierta } from "@/data/sucursales";
 import { MapPin, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 
 interface SucursalDrawerProps {
   sucursales: Sucursal[];
@@ -17,6 +19,15 @@ export default function SucursalDrawer({
   onSelect,
   selectedId,
 }: SucursalDrawerProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    // Close if dragged down more than 80px or with enough velocity
+    if (info.offset.y > 80 || info.velocity.y > 300) {
+      onToggle();
+    }
+  };
+
   return (
     <>
       {/* Toggle button - always visible */}
@@ -65,36 +76,57 @@ export default function SucursalDrawer({
         />
       </button>
 
-      {/* Mobile bottom sheet */}
-      {isOpen && (
-        <>
-          <div
-            className="md:hidden fixed inset-0 z-[850] bg-foreground/20 backdrop-blur-sm"
-            onClick={onToggle}
-          />
-          <div className="md:hidden fixed z-[900] bottom-0 left-0 right-0 glass rounded-t-2xl max-h-[60vh] animate-slide-in-bottom flex flex-col">
-            <div className="flex justify-center pt-3 pb-1 shrink-0 cursor-grab" onClick={onToggle}>
-              <div className="w-12 h-1.5 rounded-full bg-muted-foreground/40" />
-            </div>
-            <div className="p-4 border-b border-border/30 shrink-0">
-              <h2 className="font-display text-lg font-bold text-foreground">Sucursales</h2>
-            </div>
-            <div className="overflow-y-auto flex-1 overscroll-contain touch-pan-y">
-              {sucursales.map((s) => (
-                <SucursalListItem
-                  key={s.id}
-                  sucursal={s}
-                  isSelected={selectedId === s.id}
-                  onClick={() => {
-                    onSelect(s.id);
-                    onToggle();
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </>
-      )}
+      {/* Mobile bottom sheet with drag-to-dismiss */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              className="md:hidden fixed inset-0 z-[850] bg-foreground/20 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={onToggle}
+            />
+            <motion.div
+              className="md:hidden fixed z-[900] bottom-0 left-0 right-0 glass rounded-t-2xl max-h-[60vh] flex flex-col"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={{ top: 0, bottom: 0.6 }}
+              onDragEnd={handleDragEnd}
+              style={{ touchAction: "none" }}
+            >
+              {/* Drag handle */}
+              <div className="flex justify-center pt-3 pb-1 shrink-0 cursor-grab active:cursor-grabbing">
+                <div className="w-12 h-1.5 rounded-full bg-muted-foreground/40" />
+              </div>
+              <div className="p-4 border-b border-border/30 shrink-0">
+                <h2 className="font-display text-lg font-bold text-foreground">Sucursales</h2>
+              </div>
+              <div
+                ref={scrollRef}
+                className="overflow-y-auto flex-1 overscroll-contain"
+                style={{ touchAction: "pan-y" }}
+              >
+                {sucursales.map((s) => (
+                  <SucursalListItem
+                    key={s.id}
+                    sucursal={s}
+                    isSelected={selectedId === s.id}
+                    onClick={() => {
+                      onSelect(s.id);
+                      onToggle();
+                    }}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
