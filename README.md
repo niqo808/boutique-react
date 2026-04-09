@@ -1,73 +1,124 @@
-# Welcome to your Lovable project
+# Boutique la Paz🥩
 
-## Project info
+Aplicación web moderna para una boutique de ropa, diseñada con una interfaz elegante, responsive y escalable hacia e-commerce.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Información del proyecto
 
-**Use Lovable**
+**Boutique  la Paz** es una aplicación web frontend desarrollada para una boutique de ropa ubicada en el Gran Buenos Aires. El objetivo principal es ofrecer una presencia digital moderna y atractiva que refleje la identidad de la marca, con un diseño pensado para escalar hacia una solución de e-commerce completa en el futuro.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Tipo:** Aplicación web frontend
+- **Audiencia:** Clientes de la boutique y visitantes del sitio
+- **Estado:** En desarrollo activo
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Tecnologías utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+| Tecnología | Propósito |
+|---|---|
+| **Vite** | Bundler y servidor de desarrollo ultrarrápido |
+| **React** | Librería para construcción de interfaces de usuario |
+| **TypeScript** | Tipado estático para mayor robustez del código |
+| **Tailwind CSS** | Utilidades CSS para estilos rápidos y consistentes |
+| **shadcn/ui** | Componentes de UI accesibles y personalizables |
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Funcionalidades
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Catálogo de productos con diseño tipo grilla responsive
+- Paleta de colores rojo, blanco, negro y gris coherente con la identidad de marca
+- Animaciones y transiciones con Framer Motion
+- Mapa de sucursales interactivo con Leaflet.js
+- Modo oscuro con estilos consistentes en todos los componentes
+- Diseño mobile-first adaptado a distintos tamaños de pantalla
+- Arquitectura de componentes modular y escalable
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Cómo ejecutar el proyecto
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Requisitos previos
+
+- Node.js v18 o superior
+- npm o yarn
+
+### Pasos
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/niqo808/boutique-react
+
+# 2. Ingresar al directorio
+cd boutique-react
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Iniciar el servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+La aplicación estará disponible en `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Cómo editar el proyecto
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Desde tu IDE local
 
-## What technologies are used for this project?
+Clona el repositorio y ábrelo con tu editor preferido (VS Code recomendado). Utilizá las extensiones de ESLint, Prettier y Tailwind CSS IntelliSense para una mejor experiencia de desarrollo.
 
-This project is built with:
+### Directamente en GitHub
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Podés editar archivos individuales desde la interfaz web de GitHub haciendo clic en el ícono del lápiz en cualquier archivo.
 
-## How can I deploy this project?
+### Con GitHub Codespaces
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+1. Ir al repositorio en GitHub
+2. Hacer clic en **Code** > **Codespaces** > **Create codespace on main**
+3. El entorno se configura automáticamente con todas las dependencias
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+El proyecto está preparado para ser desplegado en plataformas modernas de hosting estático:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Netlify** — Conectar el repositorio y configurar el comando `npm run build` con directorio de salida `dist`
+- **Vercel** — Importar el proyecto directamente desde GitHub con detección automática de Vite
+- **Donweb** — Subir la carpeta `dist` generada por `npm run build` vía FTP o panel de hosting
+
+> El hosting y el dominio son responsabilidad del cliente.
+
+---
+
+## Próximas mejoras
+
+- [ ] Integración de carrito de compras
+- [ ] Pasarela de pagos (Mercado Pago)
+- [ ] Panel de administración para gestión de productos
+- [ ] Sistema de autenticación para clientes
+- [ ] Optimización SEO y meta tags dinámicos
+
+---
+
+## Autor
+
+**Nicolás Ferreira**
+
+Técnico en Informática · Estudiante de Licenciatura en Informática (UNAHUR)
+
+- GitHub: [@niqo808](https://github.com/niqo808)
+- Proyecto en producción: [Boutique de Carnes La Paz](https://www.lapaz.com.ar/)
+
+---
+
+> Desarrollado con React + Vite como parte de un proyecto freelance para el cliente Boutique La Paz.
