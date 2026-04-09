@@ -1,6 +1,6 @@
 # Boutique la Paz🥩
 
-Aplicación web moderna para una boutique de ropa, diseñada con una interfaz elegante, responsive y escalable hacia e-commerce.
+Aplicación web moderna para una boutique de carne, diseñada con una interfaz elegante, responsive y escalable hacia e-commerce.
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -11,7 +11,7 @@ Aplicación web moderna para una boutique de ropa, diseñada con una interfaz el
 
 ## Información del proyecto
 
-**Boutique  la Paz** es una aplicación web frontend desarrollada para una boutique de ropa ubicada en el Gran Buenos Aires. El objetivo principal es ofrecer una presencia digital moderna y atractiva que refleje la identidad de la marca, con un diseño pensado para escalar hacia una solución de e-commerce completa en el futuro.
+**Boutique  la Paz** es una aplicación web frontend desarrollada para una boutique de carne ubicada en el Gran Buenos Aires. El objetivo principal es ofrecer una presencia digital moderna y atractiva que refleje la identidad de la marca, con un diseño pensado para escalar hacia una solución de e-commerce completa en el futuro.
 
 - **Tipo:** Aplicación web frontend
 - **Audiencia:** Clientes de la boutique y visitantes del sitio
